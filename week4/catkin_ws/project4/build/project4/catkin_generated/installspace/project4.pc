@@ -1,0 +1,8 @@
+prefix=/home/james77/Desktop/SMS-Lab/week4/catkin_ws/project4/install
+
+Name: project4
+Description: Description of project4
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
