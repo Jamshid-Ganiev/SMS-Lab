@@ -4,7 +4,7 @@ Smart Mobility Service Lab
 # WEEK 4 Homework1
 ![image](https://user-images.githubusercontent.com/84252587/227773782-03afe162-c707-422f-aa7b-552b2fcd635e.png)
 ## Here is the video explanation for the project:
-[Demo Video link in google drive]https://drive.google.com/file/d/1WkuuwcvjRATmPMR4RL3zGLldcCBCsQRD/view?usp=share_link)
+[Demo Video link in google drive](https://drive.google.com/file/d/1WkuuwcvjRATmPMR4RL3zGLldcCBCsQRD/view?usp=share_link)
 
 ## source code:
 > talker.cpp
