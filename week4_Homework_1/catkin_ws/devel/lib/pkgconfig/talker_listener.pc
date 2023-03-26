@@ -1,0 +1,8 @@
+prefix=/home/james77/Desktop/SMS-Lab/week4_Homework_1/catkin_ws/devel
+
+Name: talker_listener
+Description: Description of talker_listener
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

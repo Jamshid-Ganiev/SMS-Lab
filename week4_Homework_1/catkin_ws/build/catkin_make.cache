@@ -1,0 +1,2 @@
+talker_listener
+-DCATKIN_DEVEL_PREFIX=/home/james77/Desktop/SMS-Lab/week4_Homework_1/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/james77/Desktop/SMS-Lab/week4_Homework_1/catkin_ws/install -G Unix Makefiles

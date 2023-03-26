@@ -1,2 +1,0 @@
-project4
--DCATKIN_DEVEL_PREFIX=/home/james77/Desktop/SMS-Lab/week4/catkin_ws/project4/devel -DCMAKE_INSTALL_PREFIX=/home/james77/Desktop/SMS-Lab/week4/catkin_ws/project4/install -G Unix Makefiles
