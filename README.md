@@ -74,6 +74,9 @@ int main(int argc, char** argv)
 ```
 # Week 5 | Homework 2
 
+![Photo snapshot](https://user-images.githubusercontent.com/84252587/229272295-e1b6542b-7ab4-4a6e-8ae9-8365d9def24c.png)
+
+
 ## Here is the video explanation for the project:
 [Demo Video link in google drive](https://drive.google.com/file/d/1iPvAKR7bgD22firaLfQysT-tfmjF4b4T/view?usp=share_link)
 
@@ -138,6 +141,5 @@ def main():
 
 if __name__ == '__main__':
     main()
-
 
 ```
