@@ -1,0 +1,8 @@
+prefix=/home/james77/Desktop/SMS-Lab/week5_Homework_2/catkin_ws/homework2_ws/install
+
+Name: homework2_python
+Description: Description of homework2_python
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
