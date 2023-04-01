@@ -1,7 +1,7 @@
 # SMS-Lab
 Smart Mobility Service Lab
 ### For grading purposes:
-<strong>I did not add any piece of code to .gitignore. It does not mean that I do not know how to use .gitignore concept!</strong>
+<strong>I did not move any piece of code into .gitignore. <i>And It does not mean that I do not know how to use .gitignore concept!</i></strong>
 
 # WEEK 4 Homework1
 ![image](https://user-images.githubusercontent.com/84252587/227773782-03afe162-c707-422f-aa7b-552b2fcd635e.png)
