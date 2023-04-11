@@ -146,3 +146,86 @@ if __name__ == '__main__':
 
 ```
 # Week 6 | Homework 3
+> snapshots from the project while running
+![image](https://user-images.githubusercontent.com/84252587/231214558-0ea33b3b-8c04-40b1-93cd-48e0423a21d8.png)
+![image](https://user-images.githubusercontent.com/84252587/231214610-d772612e-5e8a-4a8b-b70f-b0c589be6897.png)
+![image](https://user-images.githubusercontent.com/84252587/231214625-5928a8ea-becc-4796-868a-596f91ac8d85.png)
+
+> param_publisher.py
+
+```py
+#!/usr/bin/env python3
+
+import rospy
+from std_msgs.msg import Float32
+
+def param_publisher():
+    rospy.init_node('param_publisher', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    
+    # Retrieve values from YAML file
+    start_odometer = rospy.get_param('start_odometer')
+    end_odometer = rospy.get_param('end_odometer')
+    
+    # Create publishers for start_odometer and end_odometer
+    start_odometer_pub = rospy.Publisher('start_odometer', Float32, queue_size=10)
+    end_odometer_pub = rospy.Publisher('end_odometer', Float32, queue_size=10)
+    
+    while not rospy.is_shutdown():
+        # Publish start_odometer and end_odometer values
+        start_odometer_pub.publish(start_odometer)
+        end_odometer_pub.publish(end_odometer)
+        
+        rate.sleep()
+
+if __name__ == '__main__':
+    try:
+        param_publisher()
+    except rospy.ROSInterruptException:
+        pass
+
+
+```
+
+> param_subscriber.py
+
+```py
+#!/usr/bin/env python3
+
+import rospy
+from std_msgs.msg import Float32
+
+def odometer_callback(data):
+    # Retrieve values from start_odometer and end_odometer topics
+    start_odometer = rospy.get_param('start_odometer')
+    end_odometer = rospy.get_param('end_odometer')
+    
+    # Calculate trip distance
+    trip_distance = end_odometer - start_odometer
+    
+    # Store trip distance in ROS parameter server
+    rospy.set_param('trip_distance', trip_distance)
+    
+def param_subscriber():
+    rospy.init_node('param_subscriber', anonymous=True)
+    
+    # Subscribe to start_odometer and end_odometer topics
+    rospy.Subscriber('start_odometer', Float32, odometer_callback)
+    rospy.Subscriber('end_odometer', Float32, odometer_callback)
+    
+    rospy.spin()
+
+if __name__ == '__main__':
+    param_subscriber()
+
+
+```
+
+> parameters.yaml
+
+```yaml
+start_odometer: 0.0
+end_odometer: 10.0
+trip_distance: 10.0
+```
+
