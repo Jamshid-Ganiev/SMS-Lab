@@ -1,0 +1,8 @@
+prefix=/home/james/Desktop/SMS-Lab/week6_homework3/catkin_ws/devel
+
+Name: homework_3
+Description: Description of homework_3
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
