@@ -148,7 +148,7 @@ if __name__ == '__main__':
 # Week 6 | Homework 3
 
 ## Here is the video explanation for the project:
-![Demo Video link in google drive](https://drive.google.com/file/d/1f6M5wlDBlDd_8t_SCR9UyRb_VOKCK0lU/view?usp=share_link)
+[Demo Video link in google drive](https://drive.google.com/file/d/1f6M5wlDBlDd_8t_SCR9UyRb_VOKCK0lU/view?usp=share_link)
 
 > snapshots from the project while running
 ![image](https://user-images.githubusercontent.com/84252587/231214558-0ea33b3b-8c04-40b1-93cd-48e0423a21d8.png)
