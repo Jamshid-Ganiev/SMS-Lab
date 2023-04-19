@@ -4,15 +4,14 @@ Smart Mobility Service Lab
 <strong>I did not move any piece of code into .gitignore. <i>And It does not mean that I do not know how to use .gitignore concept!</i></strong>
 <br/>
 [Jump to Week 4 Homework 1](#week-4--homework-1)
-
 [Jump to Week 5 Homework 2](#week-5--homework-2)
-
 [Jump to Week 6 Homework 3](#week-6--homework-3)
+[Jump to Week 6 Homework 3](#week-7--homework-4)
 
 
 ***
 
-# WEEK 4 Homework1
+# WEEK 4 Homework1 <a name="week-4--homework-1"></a>
 ***
 
 ![image](https://user-images.githubusercontent.com/84252587/227773782-03afe162-c707-422f-aa7b-552b2fcd635e.png)
@@ -88,7 +87,7 @@ int main(int argc, char** argv)
 ***
 ***
 
-# Week 5 | Homework 2
+# Week 5 | Homework 2 <a name="week-5--homework-2"></a>
 ***
 
 
@@ -164,7 +163,7 @@ if __name__ == '__main__':
 ***
 ***
 
-# Week 6 | Homework 3
+# Week 6 | Homework 3 <a name="week-6--homework-3"></a>
 ***
 
 
@@ -253,4 +252,8 @@ start_odometer: 0.0
 end_odometer: 10.0
 trip_distance: 10.0
 ```
+***
+***
 
+# Week 7 | Homework 4 <a name="week-7--homework-4"></a>
+***
