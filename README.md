@@ -3,10 +3,10 @@ Smart Mobility Service Lab
 ### For grading purposes:
 <strong>I did not move any piece of code into .gitignore. <i>And It does not mean that I do not know how to use .gitignore concept!</i></strong>
 <br/>
-[Jump to Week 4 Homework 1](#week-4--homework-1)
-[Jump to Week 5 Homework 2](#week-5--homework-2)
-[Jump to Week 6 Homework 3](#week-6--homework-3)
-[Jump to Week 6 Homework 3](#week-7--homework-4)
+[Jump to Week 4 Homework 1](#week-4--homework-1)<br/>
+[Jump to Week 5 Homework 2](#week-5--homework-2)<br/>
+[Jump to Week 6 Homework 3](#week-6--homework-3)<br/>
+[Jump to Week 6 Homework 3](#week-7--homework-4)<br/>
 
 
 ***
