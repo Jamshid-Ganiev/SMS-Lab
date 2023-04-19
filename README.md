@@ -4,10 +4,10 @@ Smart Mobility Service Lab
 <strong>I did not move any piece of code into .gitignore. <i>And It does not mean that I do not know how to use .gitignore concept!</i></strong>
 
 ***
-***
-
 
 # WEEK 4 Homework1
+***
+
 ![image](https://user-images.githubusercontent.com/84252587/227773782-03afe162-c707-422f-aa7b-552b2fcd635e.png)
 ## Here is the video explanation for the project:
 [Demo Video link in google drive](https://drive.google.com/file/d/1WkuuwcvjRATmPMR4RL3zGLldcCBCsQRD/view?usp=share_link)
@@ -82,6 +82,8 @@ int main(int argc, char** argv)
 ***
 
 # Week 5 | Homework 2
+***
+
 
 ![Photo snapshot](https://user-images.githubusercontent.com/84252587/229272295-e1b6542b-7ab4-4a6e-8ae9-8365d9def24c.png)
 
@@ -156,6 +158,8 @@ if __name__ == '__main__':
 ***
 
 # Week 6 | Homework 3
+***
+
 
 ## Here is the video explanation for the project:
 [Demo Video link in google drive](https://drive.google.com/file/d/1f6M5wlDBlDd_8t_SCR9UyRb_VOKCK0lU/view?usp=share_link)
