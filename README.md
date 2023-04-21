@@ -260,8 +260,8 @@ trip_distance: 10.0
 # Week 7 | Homework 4 <a name="week-7--homework-4"></a>
 ***
 ### Demo Video:
-<video width="320" height="240" controls>
-  <source src="https://github.com/Jamshid-Ganiev/SMS-Lab/blob/master/media/week7_homework_4.mp4" type="video/mp4">
+<video width="620" controls>
+  <source src="/media/week7_homework_4.mp4" type="video/mp4">
 </video>
 
 ### Demo screenshot:
