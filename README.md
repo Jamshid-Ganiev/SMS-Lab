@@ -289,6 +289,78 @@ trip_distance: 10.0
 ***
 ## Functionality 1
 ![image](https://user-images.githubusercontent.com/84252587/233704131-f154a7e7-a405-444f-a895-258d87b339c9.png)
+<p>This C++ code initializes a ROS client for a weather service that takes a GPS location as input, retrieves the weather status and temperature, and outputs the results to the console</p>
+> weather_service_client.cpp
+```
+#include "ros/ros.h"
+#include "smart_city/WeatherService.h"
+#include "smart_city/GPSLocation.h"
+#include "smart_city/WeatherStatus.h"
+
+int main(int argc, char **argv)
+{
+  ros::init(argc, argv, "weather_service_client");
+  ros::NodeHandle n;
+
+  ros::ServiceClient client = n.serviceClient<smart_city::WeatherService>("get_weather");
+
+  smart_city::WeatherService srv;
+  srv.request.gps.latitude = 37.4563;
+  srv.request.gps.longitude = 126.7052;
+
+  if (client.call(srv))
+  {
+    ROS_INFO("Weather Status: %s, Temperature: %0.1f Celcius", srv.response.weather.condition.c_str(), srv.response.weather.temperature);
+  }
+  else
+  {
+    ROS_ERROR("Failed to call service get_weather");
+    return 1;
+  }
+
+  return 0;
+}
+```
+
+<p>This C++ code defines a ROS service server for a weather service that returns a dummy weather status and temperature for a given GPS location, and prints the results to the console</p>
+> weather_service_server.cpp
+```
+#include "ros/ros.h"
+#include "smart_city/WeatherService.h"
+#include "smart_city/GPSLocation.h"
+#include "smart_city/WeatherStatus.h"
+
+bool getWeather(smart_city::WeatherService::Request &req,
+                smart_city::WeatherService::Response &res)
+{
+  // For now, we will return a dummy weather status
+  res.weather.condition = "Sunny";
+  res.weather.temperature = 25.0;
+
+  ROS_INFO("Request: GPS location (latitude: %f, longitude: %f)", req.gps.latitude, req.gps.longitude);
+  ROS_INFO("Sending... Weather Status: %s, Temperature: %f", res.weather.condition.c_str(), res.weather.temperature);
+  return true;
+}
+
+int main(int argc, char **argv)
+{
+  ros::init(argc, argv, "weather_service_server");
+  ros::NodeHandle n;
+
+  ros::ServiceServer service = n.advertiseService("get_weather", getWeather);
+  ROS_INFO("Weather service server is ready.");
+  ros::spin();
+
+  return 0;
+}
+```
+<p>The <code>smart_city/GPSLocation</code> message type stores the latitude and longitude values of a location, while the <code>smart_city/WeatherStatus</code> message type stores the weather condition and temperature at a given GPS location. These message types are used in the "get_weather" service, which takes a GPS location as input and returns a <code>WeatherStatus</code> message containing the relevant data.</p>
+> WeatherService.srv
+```
+smart_city/GPSLocation gps
+---
+smart_city/WeatherStatus weather
+```
 
 ## Functionality 2
 ![image](https://user-images.githubusercontent.com/84252587/233718048-13855996-ec7a-4c53-94c3-22d2fe0819c2.png)
@@ -297,7 +369,17 @@ trip_distance: 10.0
   <source src="media/speed_exceeding.mp4" type="video/mp4">
 </video>
 <a href="https://github.com/Jamshid-Ganiev/SMS-Lab/blob/master/media/speed_exceeding.mp4">Video Link</a>
+<p></p>
+> launch file
+```
+<launch>
+  <param name="speed_limit" value="80.0" />
 
+  <node name="speed_publisher" pkg="smart_city" type="speed_publisher.py" />
+  <node name="speed_subscriber" pkg="smart_city" type="speed_subscriber.py" />
+  
+</launch>
+```
 
 
 
