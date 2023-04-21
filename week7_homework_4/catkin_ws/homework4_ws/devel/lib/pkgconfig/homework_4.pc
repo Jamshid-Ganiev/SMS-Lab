@@ -1,0 +1,8 @@
+prefix=/home/james77/Desktop/SMS-Lab/week7_homework_4/catkin_ws/homework4_ws/devel
+
+Name: homework_4
+Description: Description of homework_4
+Version: 0.0.0
+Cflags: -I/home/james77/Desktop/SMS-Lab/week7_homework_4/catkin_ws/homework4_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: rospy std_msgs message_runtime

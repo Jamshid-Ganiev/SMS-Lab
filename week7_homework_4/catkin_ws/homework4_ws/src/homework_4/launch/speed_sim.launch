@@ -1,0 +1,18 @@
+
+<!-- 
+This code has been developed by Jamshid Ganiev || 12200335
+-->
+
+<launch>
+  <!-- Set the wheel radius parameter to 0.125 -->
+  <param name="wheel_radius" value="0.125" type="double" />
+
+  <!-- Launch the RPM publisher node -->
+  <node name="rpm_pub_node" pkg="homework_4" type="rpm_pub.py" />
+
+  <!-- Launch the speed calculator node -->
+  <node name="speed_calc_node" pkg="homework_4" type="speed_calc.py">
+    <!-- Use the wheel radius parameter as a private ROS parameter -->
+    <param name="~wheel_radius" value="$(arg wheel_radius)" />
+  </node>
+</launch>

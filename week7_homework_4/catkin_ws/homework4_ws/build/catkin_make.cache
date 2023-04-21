@@ -1,0 +1,2 @@
+homework_4
+-DCATKIN_DEVEL_PREFIX=/home/james77/Desktop/SMS-Lab/week7_homework_4/catkin_ws/homework4_ws/devel -DCMAKE_INSTALL_PREFIX=/home/james77/Desktop/SMS-Lab/week7_homework_4/catkin_ws/homework4_ws/install -G Unix Makefiles
