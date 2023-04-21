@@ -1,0 +1,7 @@
+<launch>
+  <param name="speed_limit" value="80.0" />
+
+  <node name="speed_publisher" pkg="smart_city" type="speed_publisher.py" />
+  <node name="speed_subscriber" pkg="smart_city" type="speed_subscriber.py" />
+  
+</launch>

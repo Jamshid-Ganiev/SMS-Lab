@@ -41,6 +41,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/smart_city/msg" TYPE FILE FILES
     "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg"
     "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg"
+    "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/VehicleInfo.msg"
     )
 endif()
 

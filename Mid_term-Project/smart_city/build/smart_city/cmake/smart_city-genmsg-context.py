@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg;/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg"
+messages_str = "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg;/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg;/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/VehicleInfo.msg"
 services_str = "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv"
 pkg_name = "smart_city"
 dependencies_str = "std_msgs"

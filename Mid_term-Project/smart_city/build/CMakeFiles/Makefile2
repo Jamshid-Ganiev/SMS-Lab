@@ -148,12 +148,14 @@ smart_city/preinstall:
 .PHONY : smart_city/preinstall
 
 # Recursive "clean" directory target.
+smart_city/clean: smart_city/CMakeFiles/smart_city_genpy.dir/clean
 smart_city/clean: smart_city/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
 smart_city/clean: smart_city/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
 smart_city/clean: smart_city/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
 smart_city/clean: smart_city/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
 smart_city/clean: smart_city/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
 smart_city/clean: smart_city/CMakeFiles/roscpp_generate_messages_py.dir/clean
+smart_city/clean: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/clean
 smart_city/clean: smart_city/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
 smart_city/clean: smart_city/CMakeFiles/roscpp_generate_messages_eus.dir/clean
 smart_city/clean: smart_city/CMakeFiles/weather_service_client.dir/clean
@@ -178,7 +180,6 @@ smart_city/clean: smart_city/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/c
 smart_city/clean: smart_city/CMakeFiles/smart_city_gennodejs.dir/clean
 smart_city/clean: smart_city/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 smart_city/clean: smart_city/CMakeFiles/smart_city_generate_messages_py.dir/clean
-smart_city/clean: smart_city/CMakeFiles/smart_city_genpy.dir/clean
 
 .PHONY : smart_city/clean
 
@@ -427,6 +428,33 @@ gtest/googletest/CMakeFiles/gtest.dir/clean:
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/clean
 
 #=============================================================================
+# Target rules for target smart_city/CMakeFiles/smart_city_genpy.dir
+
+# All Build rule for target.
+smart_city/CMakeFiles/smart_city_genpy.dir/all: smart_city/CMakeFiles/smart_city_generate_messages_py.dir/all
+	$(MAKE) -f smart_city/CMakeFiles/smart_city_genpy.dir/build.make smart_city/CMakeFiles/smart_city_genpy.dir/depend
+	$(MAKE) -f smart_city/CMakeFiles/smart_city_genpy.dir/build.make smart_city/CMakeFiles/smart_city_genpy.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num= "Built target smart_city_genpy"
+.PHONY : smart_city/CMakeFiles/smart_city_genpy.dir/all
+
+# Build rule for subdir invocation for target.
+smart_city/CMakeFiles/smart_city_genpy.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 smart_city/CMakeFiles/smart_city_genpy.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 0
+.PHONY : smart_city/CMakeFiles/smart_city_genpy.dir/rule
+
+# Convenience name for target.
+smart_city_genpy: smart_city/CMakeFiles/smart_city_genpy.dir/rule
+
+.PHONY : smart_city_genpy
+
+# clean rule for target.
+smart_city/CMakeFiles/smart_city_genpy.dir/clean:
+	$(MAKE) -f smart_city/CMakeFiles/smart_city_genpy.dir/build.make smart_city/CMakeFiles/smart_city_genpy.dir/clean
+.PHONY : smart_city/CMakeFiles/smart_city_genpy.dir/clean
+
+#=============================================================================
 # Target rules for target smart_city/CMakeFiles/roscpp_generate_messages_lisp.dir
 
 # All Build rule for target.
@@ -589,6 +617,33 @@ smart_city/CMakeFiles/roscpp_generate_messages_py.dir/clean:
 .PHONY : smart_city/CMakeFiles/roscpp_generate_messages_py.dir/clean
 
 #=============================================================================
+# Target rules for target smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir
+
+# All Build rule for target.
+smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/all:
+	$(MAKE) -f smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/build.make smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/depend
+	$(MAKE) -f smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/build.make smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num= "Built target _smart_city_generate_messages_check_deps_VehicleInfo"
+.PHONY : smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/all
+
+# Build rule for subdir invocation for target.
+smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 0
+.PHONY : smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/rule
+
+# Convenience name for target.
+_smart_city_generate_messages_check_deps_VehicleInfo: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/rule
+
+.PHONY : _smart_city_generate_messages_check_deps_VehicleInfo
+
+# clean rule for target.
+smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/clean:
+	$(MAKE) -f smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/build.make smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/clean
+.PHONY : smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/clean
+
+#=============================================================================
 # Target rules for target smart_city/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir
 
 # All Build rule for target.
@@ -668,12 +723,12 @@ smart_city/CMakeFiles/weather_service_client.dir/all: smart_city/CMakeFiles/rosg
 smart_city/CMakeFiles/weather_service_client.dir/all: smart_city/CMakeFiles/smart_city_generate_messages_py.dir/all
 	$(MAKE) -f smart_city/CMakeFiles/weather_service_client.dir/build.make smart_city/CMakeFiles/weather_service_client.dir/depend
 	$(MAKE) -f smart_city/CMakeFiles/weather_service_client.dir/build.make smart_city/CMakeFiles/weather_service_client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=27,28 "Built target weather_service_client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=32,33 "Built target weather_service_client"
 .PHONY : smart_city/CMakeFiles/weather_service_client.dir/all
 
 # Build rule for subdir invocation for target.
 smart_city/CMakeFiles/weather_service_client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 20
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 25
 	$(MAKE) -f CMakeFiles/Makefile2 smart_city/CMakeFiles/weather_service_client.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 0
 .PHONY : smart_city/CMakeFiles/weather_service_client.dir/rule
@@ -746,18 +801,19 @@ smart_city/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean:
 # Target rules for target smart_city/CMakeFiles/smart_city_generate_messages_eus.dir
 
 # All Build rule for target.
+smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_GPSLocation.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_WeatherStatus.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_WeatherService.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/all: smart_city/CMakeFiles/std_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/build.make smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/depend
 	$(MAKE) -f smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/build.make smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=12,13,14,15 "Built target smart_city_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=13,14,15,16,17 "Built target smart_city_generate_messages_eus"
 .PHONY : smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 0
 .PHONY : smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/rule
@@ -803,18 +859,19 @@ smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_GPSLocation.dir/c
 # Target rules for target smart_city/CMakeFiles/smart_city_generate_messages_lisp.dir
 
 # All Build rule for target.
+smart_city/CMakeFiles/smart_city_generate_messages_lisp.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_lisp.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_GPSLocation.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_lisp.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_WeatherStatus.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_lisp.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_WeatherService.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_lisp.dir/all: smart_city/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f smart_city/CMakeFiles/smart_city_generate_messages_lisp.dir/build.make smart_city/CMakeFiles/smart_city_generate_messages_lisp.dir/depend
 	$(MAKE) -f smart_city/CMakeFiles/smart_city_generate_messages_lisp.dir/build.make smart_city/CMakeFiles/smart_city_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=16,17,18 "Built target smart_city_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=18,19,20,21 "Built target smart_city_generate_messages_lisp"
 .PHONY : smart_city/CMakeFiles/smart_city_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 smart_city/CMakeFiles/smart_city_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 smart_city/CMakeFiles/smart_city_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 0
 .PHONY : smart_city/CMakeFiles/smart_city_generate_messages_lisp.dir/rule
@@ -922,7 +979,7 @@ smart_city/CMakeFiles/smart_city_gencpp.dir/all: smart_city/CMakeFiles/smart_cit
 
 # Build rule for subdir invocation for target.
 smart_city/CMakeFiles/smart_city_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 smart_city/CMakeFiles/smart_city_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 0
 .PHONY : smart_city/CMakeFiles/smart_city_gencpp.dir/rule
@@ -963,12 +1020,12 @@ smart_city/CMakeFiles/weather_service_server.dir/all: smart_city/CMakeFiles/rosg
 smart_city/CMakeFiles/weather_service_server.dir/all: smart_city/CMakeFiles/smart_city_generate_messages_py.dir/all
 	$(MAKE) -f smart_city/CMakeFiles/weather_service_server.dir/build.make smart_city/CMakeFiles/weather_service_server.dir/depend
 	$(MAKE) -f smart_city/CMakeFiles/weather_service_server.dir/build.make smart_city/CMakeFiles/weather_service_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=29,30 "Built target weather_service_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=34,35 "Built target weather_service_server"
 .PHONY : smart_city/CMakeFiles/weather_service_server.dir/all
 
 # Build rule for subdir invocation for target.
 smart_city/CMakeFiles/weather_service_server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 20
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 25
 	$(MAKE) -f CMakeFiles/Makefile2 smart_city/CMakeFiles/weather_service_server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 0
 .PHONY : smart_city/CMakeFiles/weather_service_server.dir/rule
@@ -999,7 +1056,7 @@ smart_city/CMakeFiles/smart_city_generate_messages.dir/all: smart_city/CMakeFile
 
 # Build rule for subdir invocation for target.
 smart_city/CMakeFiles/smart_city_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 23
 	$(MAKE) -f CMakeFiles/Makefile2 smart_city/CMakeFiles/smart_city_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 0
 .PHONY : smart_city/CMakeFiles/smart_city_generate_messages.dir/rule
@@ -1046,17 +1103,18 @@ smart_city/CMakeFiles/std_msgs_generate_messages_py.dir/clean:
 
 # All Build rule for target.
 smart_city/CMakeFiles/smart_city_generate_messages_cpp.dir/all: smart_city/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+smart_city/CMakeFiles/smart_city_generate_messages_cpp.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_cpp.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_GPSLocation.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_cpp.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_WeatherStatus.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_cpp.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_WeatherService.dir/all
 	$(MAKE) -f smart_city/CMakeFiles/smart_city_generate_messages_cpp.dir/build.make smart_city/CMakeFiles/smart_city_generate_messages_cpp.dir/depend
 	$(MAKE) -f smart_city/CMakeFiles/smart_city_generate_messages_cpp.dir/build.make smart_city/CMakeFiles/smart_city_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=9,10,11 "Built target smart_city_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=9,10,11,12 "Built target smart_city_generate_messages_cpp"
 .PHONY : smart_city/CMakeFiles/smart_city_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 smart_city/CMakeFiles/smart_city_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 smart_city/CMakeFiles/smart_city_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 0
 .PHONY : smart_city/CMakeFiles/smart_city_generate_messages_cpp.dir/rule
@@ -1083,7 +1141,7 @@ smart_city/CMakeFiles/smart_city_genlisp.dir/all: smart_city/CMakeFiles/smart_ci
 
 # Build rule for subdir invocation for target.
 smart_city/CMakeFiles/smart_city_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 smart_city/CMakeFiles/smart_city_genlisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 0
 .PHONY : smart_city/CMakeFiles/smart_city_genlisp.dir/rule
@@ -1110,7 +1168,7 @@ smart_city/CMakeFiles/smart_city_geneus.dir/all: smart_city/CMakeFiles/smart_cit
 
 # Build rule for subdir invocation for target.
 smart_city/CMakeFiles/smart_city_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 smart_city/CMakeFiles/smart_city_geneus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 0
 .PHONY : smart_city/CMakeFiles/smart_city_geneus.dir/rule
@@ -1156,18 +1214,19 @@ smart_city/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean:
 # Target rules for target smart_city/CMakeFiles/smart_city_generate_messages_nodejs.dir
 
 # All Build rule for target.
+smart_city/CMakeFiles/smart_city_generate_messages_nodejs.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_nodejs.dir/all: smart_city/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_nodejs.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_GPSLocation.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_nodejs.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_WeatherStatus.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_nodejs.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_WeatherService.dir/all
 	$(MAKE) -f smart_city/CMakeFiles/smart_city_generate_messages_nodejs.dir/build.make smart_city/CMakeFiles/smart_city_generate_messages_nodejs.dir/depend
 	$(MAKE) -f smart_city/CMakeFiles/smart_city_generate_messages_nodejs.dir/build.make smart_city/CMakeFiles/smart_city_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=19,20,21 "Built target smart_city_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=22,23,24,25 "Built target smart_city_generate_messages_nodejs"
 .PHONY : smart_city/CMakeFiles/smart_city_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 smart_city/CMakeFiles/smart_city_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 smart_city/CMakeFiles/smart_city_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 0
 .PHONY : smart_city/CMakeFiles/smart_city_generate_messages_nodejs.dir/rule
@@ -1221,7 +1280,7 @@ smart_city/CMakeFiles/smart_city_gennodejs.dir/all: smart_city/CMakeFiles/smart_
 
 # Build rule for subdir invocation for target.
 smart_city/CMakeFiles/smart_city_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 smart_city/CMakeFiles/smart_city_gennodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 0
 .PHONY : smart_city/CMakeFiles/smart_city_gennodejs.dir/rule
@@ -1267,18 +1326,19 @@ smart_city/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean:
 # Target rules for target smart_city/CMakeFiles/smart_city_generate_messages_py.dir
 
 # All Build rule for target.
+smart_city/CMakeFiles/smart_city_generate_messages_py.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_VehicleInfo.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_py.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_GPSLocation.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_py.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_WeatherStatus.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_py.dir/all: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_WeatherService.dir/all
 smart_city/CMakeFiles/smart_city_generate_messages_py.dir/all: smart_city/CMakeFiles/std_msgs_generate_messages_py.dir/all
 	$(MAKE) -f smart_city/CMakeFiles/smart_city_generate_messages_py.dir/build.make smart_city/CMakeFiles/smart_city_generate_messages_py.dir/depend
 	$(MAKE) -f smart_city/CMakeFiles/smart_city_generate_messages_py.dir/build.make smart_city/CMakeFiles/smart_city_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=22,23,24,25,26 "Built target smart_city_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=26,27,28,29,30,31 "Built target smart_city_generate_messages_py"
 .PHONY : smart_city/CMakeFiles/smart_city_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 smart_city/CMakeFiles/smart_city_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 smart_city/CMakeFiles/smart_city_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 0
 .PHONY : smart_city/CMakeFiles/smart_city_generate_messages_py.dir/rule
@@ -1292,33 +1352,6 @@ smart_city_generate_messages_py: smart_city/CMakeFiles/smart_city_generate_messa
 smart_city/CMakeFiles/smart_city_generate_messages_py.dir/clean:
 	$(MAKE) -f smart_city/CMakeFiles/smart_city_generate_messages_py.dir/build.make smart_city/CMakeFiles/smart_city_generate_messages_py.dir/clean
 .PHONY : smart_city/CMakeFiles/smart_city_generate_messages_py.dir/clean
-
-#=============================================================================
-# Target rules for target smart_city/CMakeFiles/smart_city_genpy.dir
-
-# All Build rule for target.
-smart_city/CMakeFiles/smart_city_genpy.dir/all: smart_city/CMakeFiles/smart_city_generate_messages_py.dir/all
-	$(MAKE) -f smart_city/CMakeFiles/smart_city_genpy.dir/build.make smart_city/CMakeFiles/smart_city_genpy.dir/depend
-	$(MAKE) -f smart_city/CMakeFiles/smart_city_genpy.dir/build.make smart_city/CMakeFiles/smart_city_genpy.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num= "Built target smart_city_genpy"
-.PHONY : smart_city/CMakeFiles/smart_city_genpy.dir/all
-
-# Build rule for subdir invocation for target.
-smart_city/CMakeFiles/smart_city_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 smart_city/CMakeFiles/smart_city_genpy.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 0
-.PHONY : smart_city/CMakeFiles/smart_city_genpy.dir/rule
-
-# Convenience name for target.
-smart_city_genpy: smart_city/CMakeFiles/smart_city_genpy.dir/rule
-
-.PHONY : smart_city_genpy
-
-# clean rule for target.
-smart_city/CMakeFiles/smart_city_genpy.dir/clean:
-	$(MAKE) -f smart_city/CMakeFiles/smart_city_genpy.dir/build.make smart_city/CMakeFiles/smart_city_genpy.dir/clean
-.PHONY : smart_city/CMakeFiles/smart_city_genpy.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

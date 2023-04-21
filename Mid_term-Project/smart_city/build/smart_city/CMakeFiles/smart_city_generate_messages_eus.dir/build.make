@@ -55,6 +55,7 @@ include smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/progress.make
 
 smart_city/CMakeFiles/smart_city_generate_messages_eus: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/msg/GPSLocation.l
 smart_city/CMakeFiles/smart_city_generate_messages_eus: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/msg/WeatherStatus.l
+smart_city/CMakeFiles/smart_city_generate_messages_eus: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/msg/VehicleInfo.l
 smart_city/CMakeFiles/smart_city_generate_messages_eus: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/srv/WeatherService.l
 smart_city/CMakeFiles/smart_city_generate_messages_eus: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/manifest.l
 
@@ -69,20 +70,26 @@ smart_city/CMakeFiles/smart_city_generate_messages_eus: /home/james77/Desktop/SM
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from smart_city/WeatherStatus.msg"
 	cd /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/smart_city && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg -Ismart_city:/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p smart_city -o /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/msg
 
+/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/msg/VehicleInfo.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/msg/VehicleInfo.l: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/VehicleInfo.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from smart_city/VehicleInfo.msg"
+	cd /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/smart_city && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/VehicleInfo.msg -Ismart_city:/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p smart_city -o /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/msg
+
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/srv/WeatherService.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/srv/WeatherService.l: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv
-/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/srv/WeatherService.l: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/srv/WeatherService.l: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from smart_city/WeatherService.srv"
+/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/srv/WeatherService.l: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from smart_city/WeatherService.srv"
 	cd /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/smart_city && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv -Ismart_city:/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p smart_city -o /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/srv
 
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp manifest code for smart_city"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp manifest code for smart_city"
 	cd /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/smart_city && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city smart_city std_msgs
 
 smart_city_generate_messages_eus: smart_city/CMakeFiles/smart_city_generate_messages_eus
 smart_city_generate_messages_eus: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/msg/GPSLocation.l
 smart_city_generate_messages_eus: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/msg/WeatherStatus.l
+smart_city_generate_messages_eus: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/msg/VehicleInfo.l
 smart_city_generate_messages_eus: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/srv/WeatherService.l
 smart_city_generate_messages_eus: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/roseus/ros/smart_city/manifest.l
 smart_city_generate_messages_eus: smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/build.make

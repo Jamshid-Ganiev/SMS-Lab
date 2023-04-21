@@ -55,6 +55,7 @@ include smart_city/CMakeFiles/smart_city_generate_messages_cpp.dir/progress.make
 
 smart_city/CMakeFiles/smart_city_generate_messages_cpp: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/GPSLocation.h
 smart_city/CMakeFiles/smart_city_generate_messages_cpp: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherStatus.h
+smart_city/CMakeFiles/smart_city_generate_messages_cpp: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/VehicleInfo.h
 smart_city/CMakeFiles/smart_city_generate_messages_cpp: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherService.h
 
 
@@ -70,18 +71,25 @@ smart_city/CMakeFiles/smart_city_generate_messages_cpp: /home/james77/Desktop/SM
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from smart_city/WeatherStatus.msg"
 	cd /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city && /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg -Ismart_city:/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p smart_city -o /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city -e /opt/ros/noetic/share/gencpp/cmake/..
 
+/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/VehicleInfo.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/VehicleInfo.h: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/VehicleInfo.msg
+/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/VehicleInfo.h: /opt/ros/noetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from smart_city/VehicleInfo.msg"
+	cd /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city && /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/VehicleInfo.msg -Ismart_city:/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p smart_city -o /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city -e /opt/ros/noetic/share/gencpp/cmake/..
+
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherService.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherService.h: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv
-/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherService.h: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherService.h: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg
+/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherService.h: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherService.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherService.h: /opt/ros/noetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from smart_city/WeatherService.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from smart_city/WeatherService.srv"
 	cd /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city && /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv -Ismart_city:/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p smart_city -o /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city -e /opt/ros/noetic/share/gencpp/cmake/..
 
 smart_city_generate_messages_cpp: smart_city/CMakeFiles/smart_city_generate_messages_cpp
 smart_city_generate_messages_cpp: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/GPSLocation.h
 smart_city_generate_messages_cpp: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherStatus.h
+smart_city_generate_messages_cpp: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/VehicleInfo.h
 smart_city_generate_messages_cpp: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherService.h
 smart_city_generate_messages_cpp: smart_city/CMakeFiles/smart_city_generate_messages_cpp.dir/build.make
 

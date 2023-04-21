@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/lib/python3/dist-packages/smart_city/msg/_GPSLocation.py"
+  "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/lib/python3/dist-packages/smart_city/msg/_VehicleInfo.py"
   "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/lib/python3/dist-packages/smart_city/msg/_WeatherStatus.py"
   "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/lib/python3/dist-packages/smart_city/msg/__init__.py"
   "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/lib/python3/dist-packages/smart_city/srv/_WeatherService.py"

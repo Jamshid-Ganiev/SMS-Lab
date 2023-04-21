@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "smart_city: 2 messages, 1 services")
+message(STATUS "smart_city: 3 messages, 1 services")
 
 set(MSG_I_FLAGS "-Ismart_city:/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg;-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg")
 
@@ -27,9 +27,14 @@ add_custom_target(_smart_city_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "smart_city" "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg" ""
 )
 
+get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/VehicleInfo.msg" NAME_WE)
+add_custom_target(_smart_city_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "smart_city" "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/VehicleInfo.msg" ""
+)
+
 get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv" NAME_WE)
 add_custom_target(_smart_city_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "smart_city" "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv" "smart_city/GPSLocation:smart_city/WeatherStatus"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "smart_city" "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv" "smart_city/WeatherStatus:smart_city/GPSLocation"
 )
 
 #
@@ -50,12 +55,18 @@ _generate_msg_cpp(smart_city
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/smart_city
 )
+_generate_msg_cpp(smart_city
+  "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/VehicleInfo.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/smart_city
+)
 
 ### Generating Services
 _generate_srv_cpp(smart_city
   "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv"
   "${MSG_I_FLAGS}"
-  "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg;/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg"
+  "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg;/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/smart_city
 )
 
@@ -74,6 +85,8 @@ add_dependencies(smart_city_generate_messages smart_city_generate_messages_cpp)
 get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg" NAME_WE)
 add_dependencies(smart_city_generate_messages_cpp _smart_city_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg" NAME_WE)
+add_dependencies(smart_city_generate_messages_cpp _smart_city_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/VehicleInfo.msg" NAME_WE)
 add_dependencies(smart_city_generate_messages_cpp _smart_city_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv" NAME_WE)
 add_dependencies(smart_city_generate_messages_cpp _smart_city_generate_messages_check_deps_${_filename})
@@ -99,12 +112,18 @@ _generate_msg_eus(smart_city
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/smart_city
 )
+_generate_msg_eus(smart_city
+  "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/VehicleInfo.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/smart_city
+)
 
 ### Generating Services
 _generate_srv_eus(smart_city
   "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv"
   "${MSG_I_FLAGS}"
-  "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg;/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg"
+  "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg;/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/smart_city
 )
 
@@ -123,6 +142,8 @@ add_dependencies(smart_city_generate_messages smart_city_generate_messages_eus)
 get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg" NAME_WE)
 add_dependencies(smart_city_generate_messages_eus _smart_city_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg" NAME_WE)
+add_dependencies(smart_city_generate_messages_eus _smart_city_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/VehicleInfo.msg" NAME_WE)
 add_dependencies(smart_city_generate_messages_eus _smart_city_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv" NAME_WE)
 add_dependencies(smart_city_generate_messages_eus _smart_city_generate_messages_check_deps_${_filename})
@@ -148,12 +169,18 @@ _generate_msg_lisp(smart_city
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/smart_city
 )
+_generate_msg_lisp(smart_city
+  "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/VehicleInfo.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/smart_city
+)
 
 ### Generating Services
 _generate_srv_lisp(smart_city
   "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv"
   "${MSG_I_FLAGS}"
-  "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg;/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg"
+  "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg;/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/smart_city
 )
 
@@ -172,6 +199,8 @@ add_dependencies(smart_city_generate_messages smart_city_generate_messages_lisp)
 get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg" NAME_WE)
 add_dependencies(smart_city_generate_messages_lisp _smart_city_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg" NAME_WE)
+add_dependencies(smart_city_generate_messages_lisp _smart_city_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/VehicleInfo.msg" NAME_WE)
 add_dependencies(smart_city_generate_messages_lisp _smart_city_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv" NAME_WE)
 add_dependencies(smart_city_generate_messages_lisp _smart_city_generate_messages_check_deps_${_filename})
@@ -197,12 +226,18 @@ _generate_msg_nodejs(smart_city
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/smart_city
 )
+_generate_msg_nodejs(smart_city
+  "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/VehicleInfo.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/smart_city
+)
 
 ### Generating Services
 _generate_srv_nodejs(smart_city
   "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv"
   "${MSG_I_FLAGS}"
-  "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg;/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg"
+  "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg;/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/smart_city
 )
 
@@ -221,6 +256,8 @@ add_dependencies(smart_city_generate_messages smart_city_generate_messages_nodej
 get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg" NAME_WE)
 add_dependencies(smart_city_generate_messages_nodejs _smart_city_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg" NAME_WE)
+add_dependencies(smart_city_generate_messages_nodejs _smart_city_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/VehicleInfo.msg" NAME_WE)
 add_dependencies(smart_city_generate_messages_nodejs _smart_city_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv" NAME_WE)
 add_dependencies(smart_city_generate_messages_nodejs _smart_city_generate_messages_check_deps_${_filename})
@@ -246,12 +283,18 @@ _generate_msg_py(smart_city
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/smart_city
 )
+_generate_msg_py(smart_city
+  "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/VehicleInfo.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/smart_city
+)
 
 ### Generating Services
 _generate_srv_py(smart_city
   "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv"
   "${MSG_I_FLAGS}"
-  "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg;/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg"
+  "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg;/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/smart_city
 )
 
@@ -270,6 +313,8 @@ add_dependencies(smart_city_generate_messages smart_city_generate_messages_py)
 get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg" NAME_WE)
 add_dependencies(smart_city_generate_messages_py _smart_city_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg" NAME_WE)
+add_dependencies(smart_city_generate_messages_py _smart_city_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/VehicleInfo.msg" NAME_WE)
 add_dependencies(smart_city_generate_messages_py _smart_city_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv" NAME_WE)
 add_dependencies(smart_city_generate_messages_py _smart_city_generate_messages_check_deps_${_filename})
