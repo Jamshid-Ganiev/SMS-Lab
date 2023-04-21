@@ -1,0 +1,8 @@
+prefix=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/install
+
+Name: smart_city
+Description: Description of smart_city
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lsmart_city
+Requires: roscpp rospy std_msgs message_runtime
