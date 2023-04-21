@@ -261,7 +261,7 @@ trip_distance: 10.0
 ***
 ### Demo Video:
 <video width="320" height="240" controls>
-  <source src="media/week_7_homework_4.mp4" type="video/mp4">
+  <source src="media/week7_homework_4.mp4" type="video/mp4">
 </video>
 ### Demo screenshot:
 
