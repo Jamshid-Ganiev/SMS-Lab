@@ -263,7 +263,7 @@ trip_distance: 10.0
 <video width="620" controls>
   <source src="media/week7_homework_4.mp4" type="video/mp4">
 </video>
-<a src="https://github.com/Jamshid-Ganiev/SMS-Lab/blob/master/media/week7_homework_4.mp4">Video Link</a>
+<a href="https://github.com/Jamshid-Ganiev/SMS-Lab/blob/master/media/week7_homework_4.mp4">Video Link</a>
 
 ### Demo screenshot:
 
