@@ -8,7 +8,7 @@ Smart Mobility Service Lab
 [Jump to Week 4 Homework 1](#week-4--homework-1)<br/>
 [Jump to Week 5 Homework 2](#week-5--homework-2)<br/>
 [Jump to Week 6 Homework 3](#week-6--homework-3)<br/>
-[Jump to Week 6 Homework 4](#week-7--homework-4)<br/>
+[Jump to Week 7 Homework 4](#week-7--homework-4)<br/>
 
 
 ***
