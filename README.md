@@ -9,6 +9,8 @@ Smart Mobility Service Lab
 [Jump to Week 5 Homework 2](#week-5--homework-2)<br/>
 [Jump to Week 6 Homework 3](#week-6--homework-3)<br/>
 [Jump to Week 7 Homework 4](#week-7--homework-4)<br/>
+[Jump to Week 8 MID-TERM PROJECT](#week-8)<br/>
+
 
 
 ***
@@ -280,6 +282,12 @@ trip_distance: 10.0
 
 ![image](https://user-images.githubusercontent.com/84252587/233588447-b457215a-e63d-43d2-a6a7-3bc78ba8e2f4.png)
 
+***
+***
+
+# Week 8 | MID-TERM PROJECT <a name="week-8"></a>
+***
+![image](https://user-images.githubusercontent.com/84252587/233658012-11be01b0-eb64-46ff-a7b9-d1a46bf8d577.png)
 
 
 
