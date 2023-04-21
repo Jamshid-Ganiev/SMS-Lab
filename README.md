@@ -291,7 +291,8 @@ trip_distance: 10.0
 ![image](https://user-images.githubusercontent.com/84252587/233704131-f154a7e7-a405-444f-a895-258d87b339c9.png)
 <p>This C++ code initializes a ROS client for a weather service that takes a GPS location as input, retrieves the weather status and temperature, and outputs the results to the console</p>
 > weather_service_client.cpp
-```
+
+```cpp
 #include "ros/ros.h"
 #include "smart_city/WeatherService.h"
 #include "smart_city/GPSLocation.h"
@@ -323,8 +324,10 @@ int main(int argc, char **argv)
 ```
 
 <p>This C++ code defines a ROS service server for a weather service that returns a dummy weather status and temperature for a given GPS location, and prints the results to the console</p>
+
 > weather_service_server.cpp
-```
+
+```cpp
 #include "ros/ros.h"
 #include "smart_city/WeatherService.h"
 #include "smart_city/GPSLocation.h"
@@ -354,9 +357,11 @@ int main(int argc, char **argv)
   return 0;
 }
 ```
+
 <p>The <code>smart_city/GPSLocation</code> message type stores the latitude and longitude values of a location, while the <code>smart_city/WeatherStatus</code> message type stores the weather condition and temperature at a given GPS location. These message types are used in the "get_weather" service, which takes a GPS location as input and returns a <code>WeatherStatus</code> message containing the relevant data.</p>
 > WeatherService.srv
-```
+
+```srv
 smart_city/GPSLocation gps
 ---
 smart_city/WeatherStatus weather
