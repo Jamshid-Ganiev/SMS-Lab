@@ -292,6 +292,11 @@ trip_distance: 10.0
 
 ## Functionality 2
 ![image](https://user-images.githubusercontent.com/84252587/233718048-13855996-ec7a-4c53-94c3-22d2fe0819c2.png)
+### Demo Video:
+<video width="620" controls>
+  <source src="media/speed_exceeding.mp4" type="video/mp4">
+</video>
+<a href="https://github.com/Jamshid-Ganiev/SMS-Lab/blob/master/media/speed_exceeding.mp4">Video Link</a>
 
 
 
