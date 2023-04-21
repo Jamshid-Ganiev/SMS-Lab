@@ -290,6 +290,8 @@ trip_distance: 10.0
 ## Functionality 1
 ![image](https://user-images.githubusercontent.com/84252587/233704131-f154a7e7-a405-444f-a895-258d87b339c9.png)
 
+## Functionality 2
+![image](https://user-images.githubusercontent.com/84252587/233718048-13855996-ec7a-4c53-94c3-22d2fe0819c2.png)
 
 
 
