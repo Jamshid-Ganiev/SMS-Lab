@@ -261,8 +261,9 @@ trip_distance: 10.0
 ***
 ### Demo Video:
 <video width="320" height="240" controls>
-  <source src="media/week7_homework_4.mp4" type="video/mp4">
+  <source src="https://github.com/Jamshid-Ganiev/SMS-Lab/blob/master/media/week7_homework_4.mp4" type="video/mp4">
 </video>
+
 ### Demo screenshot:
 
 ![image](https://user-images.githubusercontent.com/84252587/233168016-477a4af2-6806-4134-a4e3-a442f7850a30.png)
