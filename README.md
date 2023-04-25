@@ -308,10 +308,13 @@ This project demonstrates a weather service application using ROS for the Mid-Te
 
 ### When entering GPS coordinates: 
 > this is the real coordinates of Incheon:
-![image](https://user-images.githubusercontent.com/84252587/234318103-28e8ebda-3b0e-4f86-8419-cf589caebc60.png)
+
+![Screenshot 2023-04-25 085204](https://user-images.githubusercontent.com/84252587/234319487-1e523282-719e-4a23-a81a-450adb976db2.png)
+
 
 > Successful demo photo from the project:
-![image](https://user-images.githubusercontent.com/84252587/234140147-5f203f01-d7a8-4339-a444-310db3347dbe.png)
+
+![image](https://user-images.githubusercontent.com/84252587/234318103-28e8ebda-3b0e-4f86-8419-cf589caebc60.png)
 
 ## Here is the most important thing:
 When you enter "Incheon" in the `user_input.cpp` terminal what happens?
