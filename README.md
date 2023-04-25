@@ -430,6 +430,10 @@ int main(int argc, char** argv)
 }
 
 ```
+<p>Demo videos are inside media folder</p>
+### Demo photo from recorded video:
+![image](https://user-images.githubusercontent.com/84252587/234142321-f8ba4225-d7b0-4e15-badc-d7a9b37d9a6d.png)
+
 
 ## Functionality 2
 ![image](https://user-images.githubusercontent.com/84252587/233718048-13855996-ec7a-4c53-94c3-22d2fe0819c2.png)
