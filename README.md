@@ -302,12 +302,14 @@ This project demonstrates a weather service application using ROS for the Mid-Te
 
 2. **weather_service_client**: This node subscribes to the `user_input/req` topic and listens for messages published by the `user_input` node.
 
-### When entering a city name: 
-![image](https://user-images.githubusercontent.com/84252587/234138936-88a570a9-b560-4575-9e67-d1b7a167f432.png)
+### When entering a city name:  // Retrieving real data
+![image](https://user-images.githubusercontent.com/84252587/234318257-e8c89b19-c104-4e6f-9723-972b633dd1b6.png)
+
 
 ### When entering GPS coordinates: 
 > this is the real coordinates of Incheon:
-![image](https://user-images.githubusercontent.com/84252587/234139585-e2c84147-5854-4f44-8f91-a7e92f6f4dc8.png)
+![image](https://user-images.githubusercontent.com/84252587/234318103-28e8ebda-3b0e-4f86-8419-cf589caebc60.png)
+
 > Successful demo photo from the project:
 ![image](https://user-images.githubusercontent.com/84252587/234140147-5f203f01-d7a8-4339-a444-310db3347dbe.png)
 
