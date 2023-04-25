@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/bui
 include smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_WeatherService.dir/progress.make
 
 smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_WeatherService:
-	cd /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/smart_city && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py smart_city /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv smart_city/WeatherStatus:smart_city/GPSLocation
+	cd /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/smart_city && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py smart_city /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv 
 
 _smart_city_generate_messages_check_deps_WeatherService: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_WeatherService
 _smart_city_generate_messages_check_deps_WeatherService: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_WeatherService.dir/build.make

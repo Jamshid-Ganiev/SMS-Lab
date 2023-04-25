@@ -11,11 +11,9 @@ const _deserializer = _ros_msg_utils.Deserialize;
 const _arrayDeserializer = _deserializer.Array;
 const _finder = _ros_msg_utils.Find;
 const _getByteLength = _ros_msg_utils.getByteLength;
-let GPSLocation = require('../msg/GPSLocation.js');
 
 //-----------------------------------------------------------
 
-let WeatherStatus = require('../msg/WeatherStatus.js');
 
 //-----------------------------------------------------------
 
@@ -23,22 +21,40 @@ class WeatherServiceRequest {
   constructor(initObj={}) {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
-      this.gps = null;
+      this.city_name = null;
+      this.latitude = null;
+      this.longitude = null;
     }
     else {
-      if (initObj.hasOwnProperty('gps')) {
-        this.gps = initObj.gps
+      if (initObj.hasOwnProperty('city_name')) {
+        this.city_name = initObj.city_name
       }
       else {
-        this.gps = new GPSLocation();
+        this.city_name = '';
+      }
+      if (initObj.hasOwnProperty('latitude')) {
+        this.latitude = initObj.latitude
+      }
+      else {
+        this.latitude = 0.0;
+      }
+      if (initObj.hasOwnProperty('longitude')) {
+        this.longitude = initObj.longitude
+      }
+      else {
+        this.longitude = 0.0;
       }
     }
   }
 
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type WeatherServiceRequest
-    // Serialize message field [gps]
-    bufferOffset = GPSLocation.serialize(obj.gps, buffer, bufferOffset);
+    // Serialize message field [city_name]
+    bufferOffset = _serializer.string(obj.city_name, buffer, bufferOffset);
+    // Serialize message field [latitude]
+    bufferOffset = _serializer.float32(obj.latitude, buffer, bufferOffset);
+    // Serialize message field [longitude]
+    bufferOffset = _serializer.float32(obj.longitude, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -46,13 +62,19 @@ class WeatherServiceRequest {
     //deserializes a message object of type WeatherServiceRequest
     let len;
     let data = new WeatherServiceRequest(null);
-    // Deserialize message field [gps]
-    data.gps = GPSLocation.deserialize(buffer, bufferOffset);
+    // Deserialize message field [city_name]
+    data.city_name = _deserializer.string(buffer, bufferOffset);
+    // Deserialize message field [latitude]
+    data.latitude = _deserializer.float32(buffer, bufferOffset);
+    // Deserialize message field [longitude]
+    data.longitude = _deserializer.float32(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 16;
+    let length = 0;
+    length += _getByteLength(object.city_name);
+    return length + 12;
   }
 
   static datatype() {
@@ -62,18 +84,15 @@ class WeatherServiceRequest {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '8ab89b0cff2505ac42fd099e2fe894eb';
+    return '19957a6673e039244d7d5f5f51f269a0';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    smart_city/GPSLocation gps
-    
-    ================================================================================
-    MSG: smart_city/GPSLocation
-    float64 latitude
-    float64 longitude
+    string city_name
+    float32 latitude
+    float32 longitude
     
     `;
   }
@@ -84,11 +103,25 @@ class WeatherServiceRequest {
       msg = {};
     }
     const resolved = new WeatherServiceRequest(null);
-    if (msg.gps !== undefined) {
-      resolved.gps = GPSLocation.Resolve(msg.gps)
+    if (msg.city_name !== undefined) {
+      resolved.city_name = msg.city_name;
     }
     else {
-      resolved.gps = new GPSLocation()
+      resolved.city_name = ''
+    }
+
+    if (msg.latitude !== undefined) {
+      resolved.latitude = msg.latitude;
+    }
+    else {
+      resolved.latitude = 0.0
+    }
+
+    if (msg.longitude !== undefined) {
+      resolved.longitude = msg.longitude;
+    }
+    else {
+      resolved.longitude = 0.0
     }
 
     return resolved;
@@ -99,22 +132,40 @@ class WeatherServiceResponse {
   constructor(initObj={}) {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
-      this.weather = null;
+      this.city_name = null;
+      this.weather_status = null;
+      this.temperature = null;
     }
     else {
-      if (initObj.hasOwnProperty('weather')) {
-        this.weather = initObj.weather
+      if (initObj.hasOwnProperty('city_name')) {
+        this.city_name = initObj.city_name
       }
       else {
-        this.weather = new WeatherStatus();
+        this.city_name = '';
+      }
+      if (initObj.hasOwnProperty('weather_status')) {
+        this.weather_status = initObj.weather_status
+      }
+      else {
+        this.weather_status = '';
+      }
+      if (initObj.hasOwnProperty('temperature')) {
+        this.temperature = initObj.temperature
+      }
+      else {
+        this.temperature = 0.0;
       }
     }
   }
 
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type WeatherServiceResponse
-    // Serialize message field [weather]
-    bufferOffset = WeatherStatus.serialize(obj.weather, buffer, bufferOffset);
+    // Serialize message field [city_name]
+    bufferOffset = _serializer.string(obj.city_name, buffer, bufferOffset);
+    // Serialize message field [weather_status]
+    bufferOffset = _serializer.string(obj.weather_status, buffer, bufferOffset);
+    // Serialize message field [temperature]
+    bufferOffset = _serializer.float32(obj.temperature, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -122,15 +173,20 @@ class WeatherServiceResponse {
     //deserializes a message object of type WeatherServiceResponse
     let len;
     let data = new WeatherServiceResponse(null);
-    // Deserialize message field [weather]
-    data.weather = WeatherStatus.deserialize(buffer, bufferOffset);
+    // Deserialize message field [city_name]
+    data.city_name = _deserializer.string(buffer, bufferOffset);
+    // Deserialize message field [weather_status]
+    data.weather_status = _deserializer.string(buffer, bufferOffset);
+    // Deserialize message field [temperature]
+    data.temperature = _deserializer.float32(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
-    length += WeatherStatus.getMessageSize(object.weather);
-    return length;
+    length += _getByteLength(object.city_name);
+    length += _getByteLength(object.weather_status);
+    return length + 12;
   }
 
   static datatype() {
@@ -140,19 +196,16 @@ class WeatherServiceResponse {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '653be75df0546fc1019bb908c6fde669';
+    return 'd8a808d2c751ef9193646ddc8af30499';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    smart_city/WeatherStatus weather
+    string city_name
+    string weather_status
+    float32 temperature
     
-    
-    ================================================================================
-    MSG: smart_city/WeatherStatus
-    string condition
-    float64 temperature
     
     `;
   }
@@ -163,11 +216,25 @@ class WeatherServiceResponse {
       msg = {};
     }
     const resolved = new WeatherServiceResponse(null);
-    if (msg.weather !== undefined) {
-      resolved.weather = WeatherStatus.Resolve(msg.weather)
+    if (msg.city_name !== undefined) {
+      resolved.city_name = msg.city_name;
     }
     else {
-      resolved.weather = new WeatherStatus()
+      resolved.city_name = ''
+    }
+
+    if (msg.weather_status !== undefined) {
+      resolved.weather_status = msg.weather_status;
+    }
+    else {
+      resolved.weather_status = ''
+    }
+
+    if (msg.temperature !== undefined) {
+      resolved.temperature = msg.temperature;
+    }
+    else {
+      resolved.temperature = 0.0
     }
 
     return resolved;
@@ -177,6 +244,6 @@ class WeatherServiceResponse {
 module.exports = {
   Request: WeatherServiceRequest,
   Response: WeatherServiceResponse,
-  md5sum() { return 'ec5c854fe33b5ba3e765055cce88be4e'; },
+  md5sum() { return '57c15ce4967618c6fc5d7a002a240ad2'; },
   datatype() { return 'smart_city/WeatherService'; }
 };

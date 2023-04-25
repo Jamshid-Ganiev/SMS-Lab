@@ -79,8 +79,6 @@ smart_city/CMakeFiles/smart_city_generate_messages_cpp: /home/james77/Desktop/SM
 
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherService.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherService.h: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv
-/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherService.h: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg
-/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherService.h: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherService.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherService.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from smart_city/WeatherService.srv"

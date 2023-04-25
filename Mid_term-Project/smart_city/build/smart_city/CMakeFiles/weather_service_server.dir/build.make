@@ -96,6 +96,7 @@ weather_service_server_EXTERNAL_OBJECTS =
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/lib/smart_city/weather_service_server: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/lib/smart_city/weather_service_server: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/lib/smart_city/weather_service_server: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/lib/smart_city/weather_service_server: /usr/lib/x86_64-linux-gnu/libcurl.so
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/lib/smart_city/weather_service_server: smart_city/CMakeFiles/weather_service_server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/lib/smart_city/weather_service_server"
 	cd /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/smart_city && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/weather_service_server.dir/link.txt --verbose=$(VERBOSE)

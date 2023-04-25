@@ -1,3 +1,7 @@
-smart_city/GPSLocation gps
+string city_name
+float32 latitude
+float32 longitude
 ---
-smart_city/WeatherStatus weather
+string city_name
+string weather_status
+float32 temperature

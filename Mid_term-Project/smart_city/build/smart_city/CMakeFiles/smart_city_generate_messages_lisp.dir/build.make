@@ -76,8 +76,6 @@ smart_city/CMakeFiles/smart_city_generate_messages_lisp: /home/james77/Desktop/S
 
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/common-lisp/ros/smart_city/srv/WeatherService.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/common-lisp/ros/smart_city/srv/WeatherService.lisp: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv
-/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/common-lisp/ros/smart_city/srv/WeatherService.lisp: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/WeatherStatus.msg
-/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/common-lisp/ros/smart_city/srv/WeatherService.lisp: /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg/GPSLocation.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Lisp code from smart_city/WeatherService.srv"
 	cd /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/smart_city && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/srv/WeatherService.srv -Ismart_city:/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p smart_city -o /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/share/common-lisp/ros/smart_city/srv
 

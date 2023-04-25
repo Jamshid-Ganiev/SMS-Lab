@@ -55,6 +55,7 @@
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/smart_city/CMakeFiles/roscpp_generate_messages_cpp.dir
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/smart_city/CMakeFiles/std_msgs_generate_messages_nodejs.dir
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/smart_city/CMakeFiles/smart_city_generate_messages_eus.dir
+/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/smart_city/CMakeFiles/user_input.dir
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_GPSLocation.dir
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/smart_city/CMakeFiles/smart_city_generate_messages_lisp.dir
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_WeatherStatus.dir

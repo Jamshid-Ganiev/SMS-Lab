@@ -6,22 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/GPSLocation.h
-string
--
-vector
--
-memory
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherService.h
 ros/service_traits.h
 -
@@ -45,28 +29,8 @@ ros/builtin_message_traits.h
 -
 ros/message_operations.h
 -
-smart_city/GPSLocation.h
--
 
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherServiceResponse.h
-string
--
-vector
--
-memory
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-smart_city/WeatherStatus.h
--
-
-/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include/smart_city/WeatherStatus.h
 string
 -
 vector
@@ -84,13 +48,9 @@ ros/message_operations.h
 
 /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/src/weather_service_client.cpp
 ros/ros.h
-/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/src/ros/ros.h
+-
 smart_city/WeatherService.h
-/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/src/smart_city/WeatherService.h
-smart_city/GPSLocation.h
-/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/src/smart_city/GPSLocation.h
-smart_city/WeatherStatus.h
-/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/src/smart_city/src/smart_city/WeatherStatus.h
+-
 
 /opt/ros/noetic/include/ros/advertise_options.h
 ros/forwards.h

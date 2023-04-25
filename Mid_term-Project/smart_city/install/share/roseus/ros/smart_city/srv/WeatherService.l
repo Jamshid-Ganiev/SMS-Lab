@@ -20,82 +20,118 @@
 
 (defclass smart_city::WeatherServiceRequest
   :super ros::object
-  :slots (_gps ))
+  :slots (_city_name _latitude _longitude ))
 
 (defmethod smart_city::WeatherServiceRequest
   (:init
    (&key
-    ((:gps __gps) (instance smart_city::GPSLocation :init))
+    ((:city_name __city_name) "")
+    ((:latitude __latitude) 0.0)
+    ((:longitude __longitude) 0.0)
     )
    (send-super :init)
-   (setq _gps __gps)
+   (setq _city_name (string __city_name))
+   (setq _latitude (float __latitude))
+   (setq _longitude (float __longitude))
    self)
-  (:gps
-   (&rest __gps)
-   (if (keywordp (car __gps))
-       (send* _gps __gps)
-     (progn
-       (if __gps (setq _gps (car __gps)))
-       _gps)))
+  (:city_name
+   (&optional __city_name)
+   (if __city_name (setq _city_name __city_name)) _city_name)
+  (:latitude
+   (&optional __latitude)
+   (if __latitude (setq _latitude __latitude)) _latitude)
+  (:longitude
+   (&optional __longitude)
+   (if __longitude (setq _longitude __longitude)) _longitude)
   (:serialization-length
    ()
    (+
-    ;; smart_city/GPSLocation _gps
-    (send _gps :serialization-length)
+    ;; string _city_name
+    4 (length _city_name)
+    ;; float32 _latitude
+    4
+    ;; float32 _longitude
+    4
     ))
   (:serialize
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
-     ;; smart_city/GPSLocation _gps
-       (send _gps :serialize s)
+     ;; string _city_name
+       (write-long (length _city_name) s) (princ _city_name s)
+     ;; float32 _latitude
+       (sys::poke _latitude (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _longitude
+       (sys::poke _longitude (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
-   ;; smart_city/GPSLocation _gps
-     (send _gps :deserialize buf ptr-) (incf ptr- (send _gps :serialization-length))
+   ;; string _city_name
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _city_name (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+   ;; float32 _latitude
+     (setq _latitude (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _longitude
+     (setq _longitude (sys::peek buf ptr- :float)) (incf ptr- 4)
    ;;
    self)
   )
 
 (defclass smart_city::WeatherServiceResponse
   :super ros::object
-  :slots (_weather ))
+  :slots (_city_name _weather_status _temperature ))
 
 (defmethod smart_city::WeatherServiceResponse
   (:init
    (&key
-    ((:weather __weather) (instance smart_city::WeatherStatus :init))
+    ((:city_name __city_name) "")
+    ((:weather_status __weather_status) "")
+    ((:temperature __temperature) 0.0)
     )
    (send-super :init)
-   (setq _weather __weather)
+   (setq _city_name (string __city_name))
+   (setq _weather_status (string __weather_status))
+   (setq _temperature (float __temperature))
    self)
-  (:weather
-   (&rest __weather)
-   (if (keywordp (car __weather))
-       (send* _weather __weather)
-     (progn
-       (if __weather (setq _weather (car __weather)))
-       _weather)))
+  (:city_name
+   (&optional __city_name)
+   (if __city_name (setq _city_name __city_name)) _city_name)
+  (:weather_status
+   (&optional __weather_status)
+   (if __weather_status (setq _weather_status __weather_status)) _weather_status)
+  (:temperature
+   (&optional __temperature)
+   (if __temperature (setq _temperature __temperature)) _temperature)
   (:serialization-length
    ()
    (+
-    ;; smart_city/WeatherStatus _weather
-    (send _weather :serialization-length)
+    ;; string _city_name
+    4 (length _city_name)
+    ;; string _weather_status
+    4 (length _weather_status)
+    ;; float32 _temperature
+    4
     ))
   (:serialize
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
-     ;; smart_city/WeatherStatus _weather
-       (send _weather :serialize s)
+     ;; string _city_name
+       (write-long (length _city_name) s) (princ _city_name s)
+     ;; string _weather_status
+       (write-long (length _weather_status) s) (princ _weather_status s)
+     ;; float32 _temperature
+       (sys::poke _temperature (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
-   ;; smart_city/WeatherStatus _weather
-     (send _weather :deserialize buf ptr-) (incf ptr- (send _weather :serialization-length))
+   ;; string _city_name
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _city_name (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+   ;; string _weather_status
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _weather_status (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+   ;; float32 _temperature
+     (setq _temperature (sys::peek buf ptr- :float)) (incf ptr- 4)
    ;;
    self)
   )
@@ -104,7 +140,7 @@
   :super ros::object
   :slots ())
 
-(setf (get smart_city::WeatherService :md5sum-) "ec5c854fe33b5ba3e765055cce88be4e")
+(setf (get smart_city::WeatherService :md5sum-) "57c15ce4967618c6fc5d7a002a240ad2")
 (setf (get smart_city::WeatherService :datatype-) "smart_city/WeatherService")
 (setf (get smart_city::WeatherService :request) smart_city::WeatherServiceRequest)
 (setf (get smart_city::WeatherService :response) smart_city::WeatherServiceResponse)
@@ -112,46 +148,34 @@
 (defmethod smart_city::WeatherServiceRequest
   (:response () (instance smart_city::WeatherServiceResponse :init)))
 
-(setf (get smart_city::WeatherServiceRequest :md5sum-) "ec5c854fe33b5ba3e765055cce88be4e")
+(setf (get smart_city::WeatherServiceRequest :md5sum-) "57c15ce4967618c6fc5d7a002a240ad2")
 (setf (get smart_city::WeatherServiceRequest :datatype-) "smart_city/WeatherServiceRequest")
 (setf (get smart_city::WeatherServiceRequest :definition-)
-      "smart_city/GPSLocation gps
-
-================================================================================
-MSG: smart_city/GPSLocation
-float64 latitude
-float64 longitude
+      "string city_name
+float32 latitude
+float32 longitude
 ---
-smart_city/WeatherStatus weather
+string city_name
+string weather_status
+float32 temperature
 
-
-================================================================================
-MSG: smart_city/WeatherStatus
-string condition
-float64 temperature
 ")
 
-(setf (get smart_city::WeatherServiceResponse :md5sum-) "ec5c854fe33b5ba3e765055cce88be4e")
+(setf (get smart_city::WeatherServiceResponse :md5sum-) "57c15ce4967618c6fc5d7a002a240ad2")
 (setf (get smart_city::WeatherServiceResponse :datatype-) "smart_city/WeatherServiceResponse")
 (setf (get smart_city::WeatherServiceResponse :definition-)
-      "smart_city/GPSLocation gps
-
-================================================================================
-MSG: smart_city/GPSLocation
-float64 latitude
-float64 longitude
+      "string city_name
+float32 latitude
+float32 longitude
 ---
-smart_city/WeatherStatus weather
+string city_name
+string weather_status
+float32 temperature
 
-
-================================================================================
-MSG: smart_city/WeatherStatus
-string condition
-float64 temperature
 ")
 
 
 
-(provide :smart_city/WeatherService "ec5c854fe33b5ba3e765055cce88be4e")
+(provide :smart_city/WeatherService "57c15ce4967618c6fc5d7a002a240ad2")
 
 

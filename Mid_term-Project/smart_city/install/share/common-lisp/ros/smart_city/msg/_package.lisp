@@ -3,6 +3,8 @@
   (:export
    "<GPSLOCATION>"
    "GPSLOCATION"
+   "<VEHICLEINFO>"
+   "VEHICLEINFO"
    "<WEATHERSTATUS>"
    "WEATHERSTATUS"
   ))

@@ -15,7 +15,6 @@
 #include <ros/builtin_message_traits.h>
 #include <ros/message_operations.h>
 
-#include <smart_city/GPSLocation.h>
 
 namespace smart_city
 {
@@ -25,17 +24,27 @@ struct WeatherServiceRequest_
   typedef WeatherServiceRequest_<ContainerAllocator> Type;
 
   WeatherServiceRequest_()
-    : gps()  {
+    : city_name()
+    , latitude(0.0)
+    , longitude(0.0)  {
     }
   WeatherServiceRequest_(const ContainerAllocator& _alloc)
-    : gps(_alloc)  {
+    : city_name(_alloc)
+    , latitude(0.0)
+    , longitude(0.0)  {
   (void)_alloc;
     }
 
 
 
-   typedef  ::smart_city::GPSLocation_<ContainerAllocator>  _gps_type;
-  _gps_type gps;
+   typedef std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> _city_name_type;
+  _city_name_type city_name;
+
+   typedef float _latitude_type;
+  _latitude_type latitude;
+
+   typedef float _longitude_type;
+  _longitude_type longitude;
 
 
 
@@ -66,7 +75,9 @@ return s;
 template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::smart_city::WeatherServiceRequest_<ContainerAllocator1> & lhs, const ::smart_city::WeatherServiceRequest_<ContainerAllocator2> & rhs)
 {
-  return lhs.gps == rhs.gps;
+  return lhs.city_name == rhs.city_name &&
+    lhs.latitude == rhs.latitude &&
+    lhs.longitude == rhs.longitude;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -99,12 +110,12 @@ struct IsMessage< ::smart_city::WeatherServiceRequest_<ContainerAllocator> const
 
 template <class ContainerAllocator>
 struct IsFixedSize< ::smart_city::WeatherServiceRequest_<ContainerAllocator> >
-  : TrueType
+  : FalseType
   { };
 
 template <class ContainerAllocator>
 struct IsFixedSize< ::smart_city::WeatherServiceRequest_<ContainerAllocator> const>
-  : TrueType
+  : FalseType
   { };
 
 template <class ContainerAllocator>
@@ -123,12 +134,12 @@ struct MD5Sum< ::smart_city::WeatherServiceRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "8ab89b0cff2505ac42fd099e2fe894eb";
+    return "19957a6673e039244d7d5f5f51f269a0";
   }
 
   static const char* value(const ::smart_city::WeatherServiceRequest_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x8ab89b0cff2505acULL;
-  static const uint64_t static_value2 = 0x42fd099e2fe894ebULL;
+  static const uint64_t static_value1 = 0x19957a6673e03924ULL;
+  static const uint64_t static_value2 = 0x4d7d5f5f51f269a0ULL;
 };
 
 template<class ContainerAllocator>
@@ -147,12 +158,9 @@ struct Definition< ::smart_city::WeatherServiceRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "smart_city/GPSLocation gps\n"
-"\n"
-"================================================================================\n"
-"MSG: smart_city/GPSLocation\n"
-"float64 latitude\n"
-"float64 longitude\n"
+    return "string city_name\n"
+"float32 latitude\n"
+"float32 longitude\n"
 ;
   }
 
@@ -171,7 +179,9 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.gps);
+      stream.next(m.city_name);
+      stream.next(m.latitude);
+      stream.next(m.longitude);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -190,9 +200,12 @@ struct Printer< ::smart_city::WeatherServiceRequest_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::smart_city::WeatherServiceRequest_<ContainerAllocator>& v)
   {
-    s << indent << "gps: ";
-    s << std::endl;
-    Printer< ::smart_city::GPSLocation_<ContainerAllocator> >::stream(s, indent + "  ", v.gps);
+    s << indent << "city_name: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>::stream(s, indent + "  ", v.city_name);
+    s << indent << "latitude: ";
+    Printer<float>::stream(s, indent + "  ", v.latitude);
+    s << indent << "longitude: ";
+    Printer<float>::stream(s, indent + "  ", v.longitude);
   }
 };
 

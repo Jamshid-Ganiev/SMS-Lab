@@ -8,14 +8,18 @@ import struct
 
 
 class WeatherStatus(genpy.Message):
-  _md5sum = "bf6342d0402d73c156b8c72fd09b7f24"
+  _md5sum = "5057a82170bb6f01299019173b4603ab"
   _type = "smart_city/WeatherStatus"
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """string condition
 float64 temperature
+
+float32 temperature_in_celsius
+string weather_description
+
 """
-  __slots__ = ['condition','temperature']
-  _slot_types = ['string','float64']
+  __slots__ = ['condition','temperature','temperature_in_celsius','weather_description']
+  _slot_types = ['string','float64','float32','string']
 
   def __init__(self, *args, **kwds):
     """
@@ -25,7 +29,7 @@ float64 temperature
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       condition,temperature
+       condition,temperature,temperature_in_celsius,weather_description
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -38,9 +42,15 @@ float64 temperature
         self.condition = ''
       if self.temperature is None:
         self.temperature = 0.
+      if self.temperature_in_celsius is None:
+        self.temperature_in_celsius = 0.
+      if self.weather_description is None:
+        self.weather_description = ''
     else:
       self.condition = ''
       self.temperature = 0.
+      self.temperature_in_celsius = 0.
+      self.weather_description = ''
 
   def _get_types(self):
     """
@@ -60,8 +70,14 @@ float64 temperature
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
-      _x = self.temperature
-      buff.write(_get_struct_d().pack(_x))
+      _x = self
+      buff.write(_get_struct_df().pack(_x.temperature, _x.temperature_in_celsius))
+      _x = self.weather_description
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -83,9 +99,19 @@ float64 temperature
         self.condition = str[start:end].decode('utf-8', 'rosmsg')
       else:
         self.condition = str[start:end]
+      _x = self
       start = end
-      end += 8
-      (self.temperature,) = _get_struct_d().unpack(str[start:end])
+      end += 12
+      (_x.temperature, _x.temperature_in_celsius,) = _get_struct_df().unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.weather_description = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.weather_description = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -104,8 +130,14 @@ float64 temperature
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
-      _x = self.temperature
-      buff.write(_get_struct_d().pack(_x))
+      _x = self
+      buff.write(_get_struct_df().pack(_x.temperature, _x.temperature_in_celsius))
+      _x = self.weather_description
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -128,9 +160,19 @@ float64 temperature
         self.condition = str[start:end].decode('utf-8', 'rosmsg')
       else:
         self.condition = str[start:end]
+      _x = self
       start = end
-      end += 8
-      (self.temperature,) = _get_struct_d().unpack(str[start:end])
+      end += 12
+      (_x.temperature, _x.temperature_in_celsius,) = _get_struct_df().unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.weather_description = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.weather_description = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -139,9 +181,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_d = None
-def _get_struct_d():
-    global _struct_d
-    if _struct_d is None:
-        _struct_d = struct.Struct("<d")
-    return _struct_d
+_struct_df = None
+def _get_struct_df():
+    global _struct_df
+    if _struct_df is None:
+        _struct_df = struct.Struct("<df")
+    return _struct_df

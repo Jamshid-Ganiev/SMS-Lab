@@ -15,7 +15,6 @@
 #include <ros/builtin_message_traits.h>
 #include <ros/message_operations.h>
 
-#include <smart_city/WeatherStatus.h>
 
 namespace smart_city
 {
@@ -25,17 +24,27 @@ struct WeatherServiceResponse_
   typedef WeatherServiceResponse_<ContainerAllocator> Type;
 
   WeatherServiceResponse_()
-    : weather()  {
+    : city_name()
+    , weather_status()
+    , temperature(0.0)  {
     }
   WeatherServiceResponse_(const ContainerAllocator& _alloc)
-    : weather(_alloc)  {
+    : city_name(_alloc)
+    , weather_status(_alloc)
+    , temperature(0.0)  {
   (void)_alloc;
     }
 
 
 
-   typedef  ::smart_city::WeatherStatus_<ContainerAllocator>  _weather_type;
-  _weather_type weather;
+   typedef std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> _city_name_type;
+  _city_name_type city_name;
+
+   typedef std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> _weather_status_type;
+  _weather_status_type weather_status;
+
+   typedef float _temperature_type;
+  _temperature_type temperature;
 
 
 
@@ -66,7 +75,9 @@ return s;
 template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::smart_city::WeatherServiceResponse_<ContainerAllocator1> & lhs, const ::smart_city::WeatherServiceResponse_<ContainerAllocator2> & rhs)
 {
-  return lhs.weather == rhs.weather;
+  return lhs.city_name == rhs.city_name &&
+    lhs.weather_status == rhs.weather_status &&
+    lhs.temperature == rhs.temperature;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -123,12 +134,12 @@ struct MD5Sum< ::smart_city::WeatherServiceResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "653be75df0546fc1019bb908c6fde669";
+    return "d8a808d2c751ef9193646ddc8af30499";
   }
 
   static const char* value(const ::smart_city::WeatherServiceResponse_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x653be75df0546fc1ULL;
-  static const uint64_t static_value2 = 0x019bb908c6fde669ULL;
+  static const uint64_t static_value1 = 0xd8a808d2c751ef91ULL;
+  static const uint64_t static_value2 = 0x93646ddc8af30499ULL;
 };
 
 template<class ContainerAllocator>
@@ -147,13 +158,10 @@ struct Definition< ::smart_city::WeatherServiceResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "smart_city/WeatherStatus weather\n"
+    return "string city_name\n"
+"string weather_status\n"
+"float32 temperature\n"
 "\n"
-"\n"
-"================================================================================\n"
-"MSG: smart_city/WeatherStatus\n"
-"string condition\n"
-"float64 temperature\n"
 ;
   }
 
@@ -172,7 +180,9 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.weather);
+      stream.next(m.city_name);
+      stream.next(m.weather_status);
+      stream.next(m.temperature);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -191,9 +201,12 @@ struct Printer< ::smart_city::WeatherServiceResponse_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::smart_city::WeatherServiceResponse_<ContainerAllocator>& v)
   {
-    s << indent << "weather: ";
-    s << std::endl;
-    Printer< ::smart_city::WeatherStatus_<ContainerAllocator> >::stream(s, indent + "  ", v.weather);
+    s << indent << "city_name: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>::stream(s, indent + "  ", v.city_name);
+    s << indent << "weather_status: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>::stream(s, indent + "  ", v.weather_status);
+    s << indent << "temperature: ";
+    Printer<float>::stream(s, indent + "  ", v.temperature);
   }
 };
 

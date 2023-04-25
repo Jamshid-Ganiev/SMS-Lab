@@ -40,7 +40,7 @@ template<>
 struct MD5Sum< ::smart_city::WeatherService > {
   static const char* value()
   {
-    return "ec5c854fe33b5ba3e765055cce88be4e";
+    return "57c15ce4967618c6fc5d7a002a240ad2";
   }
 
   static const char* value(const ::smart_city::WeatherService&) { return value(); }

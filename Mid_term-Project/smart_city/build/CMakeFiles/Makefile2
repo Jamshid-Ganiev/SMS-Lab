@@ -137,6 +137,7 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 
 # Recursive "all" directory target.
 smart_city/all: smart_city/CMakeFiles/weather_service_client.dir/all
+smart_city/all: smart_city/CMakeFiles/user_input.dir/all
 smart_city/all: smart_city/CMakeFiles/weather_service_server.dir/all
 smart_city/all: smart_city/CMakeFiles/smart_city_generate_messages.dir/all
 
@@ -162,6 +163,7 @@ smart_city/clean: smart_city/CMakeFiles/weather_service_client.dir/clean
 smart_city/clean: smart_city/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
 smart_city/clean: smart_city/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
 smart_city/clean: smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/clean
+smart_city/clean: smart_city/CMakeFiles/user_input.dir/clean
 smart_city/clean: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_GPSLocation.dir/clean
 smart_city/clean: smart_city/CMakeFiles/smart_city_generate_messages_lisp.dir/clean
 smart_city/clean: smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_WeatherStatus.dir/clean
@@ -723,7 +725,7 @@ smart_city/CMakeFiles/weather_service_client.dir/all: smart_city/CMakeFiles/rosg
 smart_city/CMakeFiles/weather_service_client.dir/all: smart_city/CMakeFiles/smart_city_generate_messages_py.dir/all
 	$(MAKE) -f smart_city/CMakeFiles/weather_service_client.dir/build.make smart_city/CMakeFiles/weather_service_client.dir/depend
 	$(MAKE) -f smart_city/CMakeFiles/weather_service_client.dir/build.make smart_city/CMakeFiles/weather_service_client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=32,33 "Built target weather_service_client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=34,35 "Built target weather_service_client"
 .PHONY : smart_city/CMakeFiles/weather_service_client.dir/all
 
 # Build rule for subdir invocation for target.
@@ -827,6 +829,52 @@ smart_city_generate_messages_eus: smart_city/CMakeFiles/smart_city_generate_mess
 smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/clean:
 	$(MAKE) -f smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/build.make smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/clean
 .PHONY : smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/clean
+
+#=============================================================================
+# Target rules for target smart_city/CMakeFiles/user_input.dir
+
+# All Build rule for target.
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/roscpp_generate_messages_py.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/roscpp_generate_messages_eus.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/smart_city_generate_messages_eus.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/smart_city_generate_messages_lisp.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/std_msgs_generate_messages_py.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/smart_city_generate_messages_cpp.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/smart_city_generate_messages_nodejs.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+smart_city/CMakeFiles/user_input.dir/all: smart_city/CMakeFiles/smart_city_generate_messages_py.dir/all
+	$(MAKE) -f smart_city/CMakeFiles/user_input.dir/build.make smart_city/CMakeFiles/user_input.dir/depend
+	$(MAKE) -f smart_city/CMakeFiles/user_input.dir/build.make smart_city/CMakeFiles/user_input.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=32,33 "Built target user_input"
+.PHONY : smart_city/CMakeFiles/user_input.dir/all
+
+# Build rule for subdir invocation for target.
+smart_city/CMakeFiles/user_input.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 25
+	$(MAKE) -f CMakeFiles/Makefile2 smart_city/CMakeFiles/user_input.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles 0
+.PHONY : smart_city/CMakeFiles/user_input.dir/rule
+
+# Convenience name for target.
+user_input: smart_city/CMakeFiles/user_input.dir/rule
+
+.PHONY : user_input
+
+# clean rule for target.
+smart_city/CMakeFiles/user_input.dir/clean:
+	$(MAKE) -f smart_city/CMakeFiles/user_input.dir/build.make smart_city/CMakeFiles/user_input.dir/clean
+.PHONY : smart_city/CMakeFiles/user_input.dir/clean
 
 #=============================================================================
 # Target rules for target smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_GPSLocation.dir
@@ -1020,7 +1068,7 @@ smart_city/CMakeFiles/weather_service_server.dir/all: smart_city/CMakeFiles/rosg
 smart_city/CMakeFiles/weather_service_server.dir/all: smart_city/CMakeFiles/smart_city_generate_messages_py.dir/all
 	$(MAKE) -f smart_city/CMakeFiles/weather_service_server.dir/build.make smart_city/CMakeFiles/weather_service_server.dir/depend
 	$(MAKE) -f smart_city/CMakeFiles/weather_service_server.dir/build.make smart_city/CMakeFiles/weather_service_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=34,35 "Built target weather_service_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build/CMakeFiles --progress-num=36,37 "Built target weather_service_server"
 .PHONY : smart_city/CMakeFiles/weather_service_server.dir/all
 
 # Build rule for subdir invocation for target.

@@ -467,6 +467,19 @@ smart_city_generate_messages_eus/fast:
 .PHONY : smart_city_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named user_input
+
+# Build rule for target.
+user_input: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 user_input
+.PHONY : user_input
+
+# fast build rule for target.
+user_input/fast:
+	$(MAKE) -f smart_city/CMakeFiles/user_input.dir/build.make smart_city/CMakeFiles/user_input.dir/build
+.PHONY : user_input/fast
+
+#=============================================================================
 # Target rules for targets named _smart_city_generate_messages_check_deps_GPSLocation
 
 # Build rule for target.
@@ -736,6 +749,7 @@ help:
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... smart_city_generate_messages_eus"
+	@echo "... user_input"
 	@echo "... _smart_city_generate_messages_check_deps_GPSLocation"
 	@echo "... smart_city_generate_messages_lisp"
 	@echo "... _smart_city_generate_messages_check_deps_WeatherStatus"

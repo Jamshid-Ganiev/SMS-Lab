@@ -6,21 +6,17 @@ python3 = True if sys.hexversion > 0x03000000 else False
 import genpy
 import struct
 
-import smart_city.msg
 
 class WeatherServiceRequest(genpy.Message):
-  _md5sum = "8ab89b0cff2505ac42fd099e2fe894eb"
+  _md5sum = "19957a6673e039244d7d5f5f51f269a0"
   _type = "smart_city/WeatherServiceRequest"
   _has_header = False  # flag to mark the presence of a Header object
-  _full_text = """smart_city/GPSLocation gps
-
-================================================================================
-MSG: smart_city/GPSLocation
-float64 latitude
-float64 longitude
+  _full_text = """string city_name
+float32 latitude
+float32 longitude
 """
-  __slots__ = ['gps']
-  _slot_types = ['smart_city/GPSLocation']
+  __slots__ = ['city_name','latitude','longitude']
+  _slot_types = ['string','float32','float32']
 
   def __init__(self, *args, **kwds):
     """
@@ -30,7 +26,7 @@ float64 longitude
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       gps
+       city_name,latitude,longitude
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -39,10 +35,16 @@ float64 longitude
     if args or kwds:
       super(WeatherServiceRequest, self).__init__(*args, **kwds)
       # message fields cannot be None, assign default values for those that are
-      if self.gps is None:
-        self.gps = smart_city.msg.GPSLocation()
+      if self.city_name is None:
+        self.city_name = ''
+      if self.latitude is None:
+        self.latitude = 0.
+      if self.longitude is None:
+        self.longitude = 0.
     else:
-      self.gps = smart_city.msg.GPSLocation()
+      self.city_name = ''
+      self.latitude = 0.
+      self.longitude = 0.
 
   def _get_types(self):
     """
@@ -56,8 +58,14 @@ float64 longitude
     :param buff: buffer, ``StringIO``
     """
     try:
+      _x = self.city_name
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_2d().pack(_x.gps.latitude, _x.gps.longitude))
+      buff.write(_get_struct_2f().pack(_x.latitude, _x.longitude))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -69,13 +77,20 @@ float64 longitude
     if python3:
       codecs.lookup_error("rosmsg").msg_type = self._type
     try:
-      if self.gps is None:
-        self.gps = smart_city.msg.GPSLocation()
       end = 0
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.city_name = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.city_name = str[start:end]
       _x = self
       start = end
-      end += 16
-      (_x.gps.latitude, _x.gps.longitude,) = _get_struct_2d().unpack(str[start:end])
+      end += 8
+      (_x.latitude, _x.longitude,) = _get_struct_2f().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -88,8 +103,14 @@ float64 longitude
     :param numpy: numpy python module
     """
     try:
+      _x = self.city_name
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_2d().pack(_x.gps.latitude, _x.gps.longitude))
+      buff.write(_get_struct_2f().pack(_x.latitude, _x.longitude))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -102,13 +123,20 @@ float64 longitude
     if python3:
       codecs.lookup_error("rosmsg").msg_type = self._type
     try:
-      if self.gps is None:
-        self.gps = smart_city.msg.GPSLocation()
       end = 0
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.city_name = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.city_name = str[start:end]
       _x = self
       start = end
-      end += 16
-      (_x.gps.latitude, _x.gps.longitude,) = _get_struct_2d().unpack(str[start:end])
+      end += 8
+      (_x.latitude, _x.longitude,) = _get_struct_2f().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -117,12 +145,12 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_2d = None
-def _get_struct_2d():
-    global _struct_2d
-    if _struct_2d is None:
-        _struct_2d = struct.Struct("<2d")
-    return _struct_2d
+_struct_2f = None
+def _get_struct_2f():
+    global _struct_2f
+    if _struct_2f is None:
+        _struct_2f = struct.Struct("<2f")
+    return _struct_2f
 # This Python file uses the following encoding: utf-8
 """autogenerated by genpy from smart_city/WeatherServiceResponse.msg. Do not edit."""
 import codecs
@@ -131,22 +159,18 @@ python3 = True if sys.hexversion > 0x03000000 else False
 import genpy
 import struct
 
-import smart_city.msg
 
 class WeatherServiceResponse(genpy.Message):
-  _md5sum = "653be75df0546fc1019bb908c6fde669"
+  _md5sum = "d8a808d2c751ef9193646ddc8af30499"
   _type = "smart_city/WeatherServiceResponse"
   _has_header = False  # flag to mark the presence of a Header object
-  _full_text = """smart_city/WeatherStatus weather
+  _full_text = """string city_name
+string weather_status
+float32 temperature
 
-
-================================================================================
-MSG: smart_city/WeatherStatus
-string condition
-float64 temperature
 """
-  __slots__ = ['weather']
-  _slot_types = ['smart_city/WeatherStatus']
+  __slots__ = ['city_name','weather_status','temperature']
+  _slot_types = ['string','string','float32']
 
   def __init__(self, *args, **kwds):
     """
@@ -156,7 +180,7 @@ float64 temperature
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       weather
+       city_name,weather_status,temperature
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -165,10 +189,16 @@ float64 temperature
     if args or kwds:
       super(WeatherServiceResponse, self).__init__(*args, **kwds)
       # message fields cannot be None, assign default values for those that are
-      if self.weather is None:
-        self.weather = smart_city.msg.WeatherStatus()
+      if self.city_name is None:
+        self.city_name = ''
+      if self.weather_status is None:
+        self.weather_status = ''
+      if self.temperature is None:
+        self.temperature = 0.
     else:
-      self.weather = smart_city.msg.WeatherStatus()
+      self.city_name = ''
+      self.weather_status = ''
+      self.temperature = 0.
 
   def _get_types(self):
     """
@@ -182,14 +212,20 @@ float64 temperature
     :param buff: buffer, ``StringIO``
     """
     try:
-      _x = self.weather.condition
+      _x = self.city_name
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
-      _x = self.weather.temperature
-      buff.write(_get_struct_d().pack(_x))
+      _x = self.weather_status
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.temperature
+      buff.write(_get_struct_f().pack(_x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -201,8 +237,6 @@ float64 temperature
     if python3:
       codecs.lookup_error("rosmsg").msg_type = self._type
     try:
-      if self.weather is None:
-        self.weather = smart_city.msg.WeatherStatus()
       end = 0
       start = end
       end += 4
@@ -210,12 +244,21 @@ float64 temperature
       start = end
       end += length
       if python3:
-        self.weather.condition = str[start:end].decode('utf-8', 'rosmsg')
+        self.city_name = str[start:end].decode('utf-8', 'rosmsg')
       else:
-        self.weather.condition = str[start:end]
+        self.city_name = str[start:end]
       start = end
-      end += 8
-      (self.weather.temperature,) = _get_struct_d().unpack(str[start:end])
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.weather_status = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.weather_status = str[start:end]
+      start = end
+      end += 4
+      (self.temperature,) = _get_struct_f().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -228,14 +271,20 @@ float64 temperature
     :param numpy: numpy python module
     """
     try:
-      _x = self.weather.condition
+      _x = self.city_name
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
-      _x = self.weather.temperature
-      buff.write(_get_struct_d().pack(_x))
+      _x = self.weather_status
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.temperature
+      buff.write(_get_struct_f().pack(_x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -248,8 +297,6 @@ float64 temperature
     if python3:
       codecs.lookup_error("rosmsg").msg_type = self._type
     try:
-      if self.weather is None:
-        self.weather = smart_city.msg.WeatherStatus()
       end = 0
       start = end
       end += 4
@@ -257,12 +304,21 @@ float64 temperature
       start = end
       end += length
       if python3:
-        self.weather.condition = str[start:end].decode('utf-8', 'rosmsg')
+        self.city_name = str[start:end].decode('utf-8', 'rosmsg')
       else:
-        self.weather.condition = str[start:end]
+        self.city_name = str[start:end]
       start = end
-      end += 8
-      (self.weather.temperature,) = _get_struct_d().unpack(str[start:end])
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.weather_status = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.weather_status = str[start:end]
+      start = end
+      end += 4
+      (self.temperature,) = _get_struct_f().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -271,14 +327,14 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_d = None
-def _get_struct_d():
-    global _struct_d
-    if _struct_d is None:
-        _struct_d = struct.Struct("<d")
-    return _struct_d
+_struct_f = None
+def _get_struct_f():
+    global _struct_f
+    if _struct_f is None:
+        _struct_f = struct.Struct("<f")
+    return _struct_f
 class WeatherService(object):
   _type          = 'smart_city/WeatherService'
-  _md5sum = 'ec5c854fe33b5ba3e765055cce88be4e'
+  _md5sum = '57c15ce4967618c6fc5d7a002a240ad2'
   _request_class  = WeatherServiceRequest
   _response_class = WeatherServiceResponse

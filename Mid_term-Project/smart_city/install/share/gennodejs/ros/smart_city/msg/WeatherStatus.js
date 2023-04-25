@@ -20,6 +20,8 @@ class WeatherStatus {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.condition = null;
       this.temperature = null;
+      this.temperature_in_celsius = null;
+      this.weather_description = null;
     }
     else {
       if (initObj.hasOwnProperty('condition')) {
@@ -34,6 +36,18 @@ class WeatherStatus {
       else {
         this.temperature = 0.0;
       }
+      if (initObj.hasOwnProperty('temperature_in_celsius')) {
+        this.temperature_in_celsius = initObj.temperature_in_celsius
+      }
+      else {
+        this.temperature_in_celsius = 0.0;
+      }
+      if (initObj.hasOwnProperty('weather_description')) {
+        this.weather_description = initObj.weather_description
+      }
+      else {
+        this.weather_description = '';
+      }
     }
   }
 
@@ -43,6 +57,10 @@ class WeatherStatus {
     bufferOffset = _serializer.string(obj.condition, buffer, bufferOffset);
     // Serialize message field [temperature]
     bufferOffset = _serializer.float64(obj.temperature, buffer, bufferOffset);
+    // Serialize message field [temperature_in_celsius]
+    bufferOffset = _serializer.float32(obj.temperature_in_celsius, buffer, bufferOffset);
+    // Serialize message field [weather_description]
+    bufferOffset = _serializer.string(obj.weather_description, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -54,13 +72,18 @@ class WeatherStatus {
     data.condition = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [temperature]
     data.temperature = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [temperature_in_celsius]
+    data.temperature_in_celsius = _deserializer.float32(buffer, bufferOffset);
+    // Deserialize message field [weather_description]
+    data.weather_description = _deserializer.string(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += _getByteLength(object.condition);
-    return length + 12;
+    length += _getByteLength(object.weather_description);
+    return length + 20;
   }
 
   static datatype() {
@@ -70,7 +93,7 @@ class WeatherStatus {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'bf6342d0402d73c156b8c72fd09b7f24';
+    return '5057a82170bb6f01299019173b4603ab';
   }
 
   static messageDefinition() {
@@ -78,6 +101,10 @@ class WeatherStatus {
     return `
     string condition
     float64 temperature
+    
+    float32 temperature_in_celsius
+    string weather_description
+    
     
     `;
   }
@@ -100,6 +127,20 @@ class WeatherStatus {
     }
     else {
       resolved.temperature = 0.0
+    }
+
+    if (msg.temperature_in_celsius !== undefined) {
+      resolved.temperature_in_celsius = msg.temperature_in_celsius;
+    }
+    else {
+      resolved.temperature_in_celsius = 0.0
+    }
+
+    if (msg.weather_description !== undefined) {
+      resolved.weather_description = msg.weather_description;
+    }
+    else {
+      resolved.weather_description = ''
     }
 
     return resolved;

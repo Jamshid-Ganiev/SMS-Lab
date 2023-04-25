@@ -378,6 +378,21 @@ smart_city_generate_messages_eus/fast:
 .PHONY : smart_city_generate_messages_eus/fast
 
 # Convenience name for target.
+smart_city/CMakeFiles/user_input.dir/rule:
+	cd /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build && $(MAKE) -f CMakeFiles/Makefile2 smart_city/CMakeFiles/user_input.dir/rule
+.PHONY : smart_city/CMakeFiles/user_input.dir/rule
+
+# Convenience name for target.
+user_input: smart_city/CMakeFiles/user_input.dir/rule
+
+.PHONY : user_input
+
+# fast build rule for target.
+user_input/fast:
+	cd /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build && $(MAKE) -f smart_city/CMakeFiles/user_input.dir/build.make smart_city/CMakeFiles/user_input.dir/build
+.PHONY : user_input/fast
+
+# Convenience name for target.
 smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_GPSLocation.dir/rule:
 	cd /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build && $(MAKE) -f CMakeFiles/Makefile2 smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_GPSLocation.dir/rule
 .PHONY : smart_city/CMakeFiles/_smart_city_generate_messages_check_deps_GPSLocation.dir/rule
@@ -647,6 +662,33 @@ smart_city_generate_messages_py/fast:
 	cd /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build && $(MAKE) -f smart_city/CMakeFiles/smart_city_generate_messages_py.dir/build.make smart_city/CMakeFiles/smart_city_generate_messages_py.dir/build
 .PHONY : smart_city_generate_messages_py/fast
 
+src/user_input.o: src/user_input.cpp.o
+
+.PHONY : src/user_input.o
+
+# target to build an object file
+src/user_input.cpp.o:
+	cd /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build && $(MAKE) -f smart_city/CMakeFiles/user_input.dir/build.make smart_city/CMakeFiles/user_input.dir/src/user_input.cpp.o
+.PHONY : src/user_input.cpp.o
+
+src/user_input.i: src/user_input.cpp.i
+
+.PHONY : src/user_input.i
+
+# target to preprocess a source file
+src/user_input.cpp.i:
+	cd /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build && $(MAKE) -f smart_city/CMakeFiles/user_input.dir/build.make smart_city/CMakeFiles/user_input.dir/src/user_input.cpp.i
+.PHONY : src/user_input.cpp.i
+
+src/user_input.s: src/user_input.cpp.s
+
+.PHONY : src/user_input.s
+
+# target to generate assembly for a file
+src/user_input.cpp.s:
+	cd /home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/build && $(MAKE) -f smart_city/CMakeFiles/user_input.dir/build.make smart_city/CMakeFiles/user_input.dir/src/user_input.cpp.s
+.PHONY : src/user_input.cpp.s
+
 src/weather_service_client.o: src/weather_service_client.cpp.o
 
 .PHONY : src/weather_service_client.o
@@ -727,6 +769,7 @@ help:
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... smart_city_generate_messages_eus"
+	@echo "... user_input"
 	@echo "... _smart_city_generate_messages_check_deps_GPSLocation"
 	@echo "... smart_city_generate_messages_lisp"
 	@echo "... _smart_city_generate_messages_check_deps_WeatherStatus"
@@ -746,6 +789,9 @@ help:
 	@echo "... test"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... smart_city_generate_messages_py"
+	@echo "... src/user_input.o"
+	@echo "... src/user_input.i"
+	@echo "... src/user_input.s"
 	@echo "... src/weather_service_client.o"
 	@echo "... src/weather_service_client.i"
 	@echo "... src/weather_service_client.s"

@@ -1,28 +1,39 @@
-#include "ros/ros.h"
-#include "smart_city/WeatherService.h"
-#include "smart_city/GPSLocation.h"
-#include "smart_city/WeatherStatus.h"
+#include <ros/ros.h>
+#include <smart_city/WeatherService.h>
 
-int main(int argc, char **argv)
+void printWeatherReport(const smart_city::WeatherService::Response& res)
 {
-  ros::init(argc, argv, "weather_service_client");
-  ros::NodeHandle n;
+    std::cout << "City: " << res.city_name << std::endl;
+    std::cout << "Weather status: " << res.weather_status << std::endl;
+    std::cout << "Temperature: " << res.temperature << " °C" << std::endl;
+}
 
-  ros::ServiceClient client = n.serviceClient<smart_city::WeatherService>("get_weather");
+void userInputCallback(const smart_city::WeatherService::Request& req)
+{
+    ros::NodeHandle nh;
+    ros::ServiceClient client = nh.serviceClient<smart_city::WeatherService>("weather_service");
+    smart_city::WeatherService srv;
 
-  smart_city::WeatherService srv;
-  srv.request.gps.latitude = 37.4563;
-  srv.request.gps.longitude = 126.7052;
+    srv.request = req;
 
-  if (client.call(srv))
-  {
-    ROS_INFO("Weather Status: %s, Temperature: %0.1f Celcius", srv.response.weather.condition.c_str(), srv.response.weather.temperature);
-  }
-  else
-  {
-    ROS_ERROR("Failed to call service get_weather");
-    return 1;
-  }
+    if (client.call(srv))
+    {
+        printWeatherReport(srv.response);
+    }
+    else
+    {
+        ROS_ERROR("Failed to call weather service");
+    }
+}
 
-  return 0;
+int main(int argc, char** argv)
+{
+    ros::init(argc, argv, "weather_service_client");
+    ros::NodeHandle nh;
+
+    ros::Subscriber sub = nh.subscribe("user_input/req", 1000, userInputCallback);
+
+    ros::spin();
+
+    return 0;
 }

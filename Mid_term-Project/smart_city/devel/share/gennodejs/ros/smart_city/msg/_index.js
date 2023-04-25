@@ -1,12 +1,12 @@
 
 "use strict";
 
+let VehicleInfo = require('./VehicleInfo.js');
 let GPSLocation = require('./GPSLocation.js');
 let WeatherStatus = require('./WeatherStatus.js');
-let VehicleInfo = require('./VehicleInfo.js');
 
 module.exports = {
+  VehicleInfo: VehicleInfo,
   GPSLocation: GPSLocation,
   WeatherStatus: WeatherStatus,
-  VehicleInfo: VehicleInfo,
 };

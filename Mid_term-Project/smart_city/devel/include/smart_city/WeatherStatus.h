@@ -25,11 +25,15 @@ struct WeatherStatus_
 
   WeatherStatus_()
     : condition()
-    , temperature(0.0)  {
+    , temperature(0.0)
+    , temperature_in_celsius(0.0)
+    , weather_description()  {
     }
   WeatherStatus_(const ContainerAllocator& _alloc)
     : condition(_alloc)
-    , temperature(0.0)  {
+    , temperature(0.0)
+    , temperature_in_celsius(0.0)
+    , weather_description(_alloc)  {
   (void)_alloc;
     }
 
@@ -40,6 +44,12 @@ struct WeatherStatus_
 
    typedef double _temperature_type;
   _temperature_type temperature;
+
+   typedef float _temperature_in_celsius_type;
+  _temperature_in_celsius_type temperature_in_celsius;
+
+   typedef std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> _weather_description_type;
+  _weather_description_type weather_description;
 
 
 
@@ -71,7 +81,9 @@ template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::smart_city::WeatherStatus_<ContainerAllocator1> & lhs, const ::smart_city::WeatherStatus_<ContainerAllocator2> & rhs)
 {
   return lhs.condition == rhs.condition &&
-    lhs.temperature == rhs.temperature;
+    lhs.temperature == rhs.temperature &&
+    lhs.temperature_in_celsius == rhs.temperature_in_celsius &&
+    lhs.weather_description == rhs.weather_description;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -128,12 +140,12 @@ struct MD5Sum< ::smart_city::WeatherStatus_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "bf6342d0402d73c156b8c72fd09b7f24";
+    return "5057a82170bb6f01299019173b4603ab";
   }
 
   static const char* value(const ::smart_city::WeatherStatus_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xbf6342d0402d73c1ULL;
-  static const uint64_t static_value2 = 0x56b8c72fd09b7f24ULL;
+  static const uint64_t static_value1 = 0x5057a82170bb6f01ULL;
+  static const uint64_t static_value2 = 0x299019173b4603abULL;
 };
 
 template<class ContainerAllocator>
@@ -154,6 +166,10 @@ struct Definition< ::smart_city::WeatherStatus_<ContainerAllocator> >
   {
     return "string condition\n"
 "float64 temperature\n"
+"\n"
+"float32 temperature_in_celsius\n"
+"string weather_description\n"
+"\n"
 ;
   }
 
@@ -174,6 +190,8 @@ namespace serialization
     {
       stream.next(m.condition);
       stream.next(m.temperature);
+      stream.next(m.temperature_in_celsius);
+      stream.next(m.weather_description);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -196,6 +214,10 @@ struct Printer< ::smart_city::WeatherStatus_<ContainerAllocator> >
     Printer<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>::stream(s, indent + "  ", v.condition);
     s << indent << "temperature: ";
     Printer<double>::stream(s, indent + "  ", v.temperature);
+    s << indent << "temperature_in_celsius: ";
+    Printer<float>::stream(s, indent + "  ", v.temperature_in_celsius);
+    s << indent << "weather_description: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>::stream(s, indent + "  ", v.weather_description);
   }
 };
 

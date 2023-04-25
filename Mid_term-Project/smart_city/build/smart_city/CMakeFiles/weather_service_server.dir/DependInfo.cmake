@@ -20,6 +20,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/james77/Desktop/SMS-Lab/Mid_term-Project/smart_city/devel/include"
   "/opt/ros/noetic/include"
   "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+  "/usr/include/jsoncpp"
   )
 
 # Targets to which this target links.
