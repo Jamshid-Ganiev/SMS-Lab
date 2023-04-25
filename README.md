@@ -288,83 +288,147 @@ trip_distance: 10.0
 # Week 8 | MID-TERM PROJECT <a name="week-8"></a>
 ***
 ## Functionality 1
+Verison one:
 ![image](https://user-images.githubusercontent.com/84252587/233704131-f154a7e7-a405-444f-a895-258d87b339c9.png)
-<p>This C++ code initializes a ROS client for a weather service that takes a GPS location as input, retrieves the weather status and temperature, and outputs the results to the console</p>
-> weather_service_client.cpp
 
+## ROS Weather Service Using OpenWeather API
+
+This project demonstrates a weather service application using ROS for the Mid-Term Project. The application consists of three nodes: `user_input`, `weather_service_client`, and `weather_service_server`. The project fetches weather data from the OpenWeatherMap API.
+
+### Nodes
+
+1. **user_input**: This node takes user input for either city name or GPS coordinates (latitude and longitude) and publishes the request object to the `user_input/req` topic.
+
+2. **weather_service_client**: This node subscribes to the `user_input/req` topic and listens for messages published by the `user_input` node.
+
+### When entering a city name: 
+![image](https://user-images.githubusercontent.com/84252587/234138936-88a570a9-b560-4575-9e67-d1b7a167f432.png)
+
+### When entering GPS coordinates: 
+> this is the real coordinates of Incheon:
+![image](https://user-images.githubusercontent.com/84252587/234139585-e2c84147-5854-4f44-8f91-a7e92f6f4dc8.png)
+> Successful demo photo from the project:
+![image](https://user-images.githubusercontent.com/84252587/234140147-5f203f01-d7a8-4339-a444-310db3347dbe.png)
+
+## Here is the most important thing:
+When you enter "Incheon" in the `user_input.cpp` terminal what happens?
+**The following sequence of actions occurs:
+
+1. The `user_input` node takes the city name "Incheon" as input and creates a request object with `city_name` set to "Incheon", `latitude` to 0, and `longitude` to 0.
+2. The request is sent to the `weather_service_server` node through the `weather_service` service.
+3. The server processes the request, fetching the weather data for Incheon using OpenWeatherMap API.
+4. The server sends back a response containing the weather information (city name, weather status, and temperature) to the `user_input` node.
+5. The `user_input` node publishes the response to the `weather_service_client` node via the `weather_updates` topic.
+6. The `weather_service_client` node subscribes to the `weather_updates` topic and receives the weather information.
+7. The `weather_service_client` node prints the weather information for Incheon in the terminal.
+## I got my API_KEY from the openweather API to access the weather data
 ```cpp
-#include "ros/ros.h"
-#include "smart_city/WeatherService.h"
-#include "smart_city/GPSLocation.h"
-#include "smart_city/WeatherStatus.h"
-
-int main(int argc, char **argv)
-{
-  ros::init(argc, argv, "weather_service_client");
-  ros::NodeHandle n;
-
-  ros::ServiceClient client = n.serviceClient<smart_city::WeatherService>("get_weather");
-
-  smart_city::WeatherService srv;
-  srv.request.gps.latitude = 37.4563;
-  srv.request.gps.longitude = 126.7052;
-
-  if (client.call(srv))
-  {
-    ROS_INFO("Weather Status: %s, Temperature: %0.1f Celcius", srv.response.weather.condition.c_str(), srv.response.weather.temperature);
-  }
-  else
-  {
-    ROS_ERROR("Failed to call service get_weather");
-    return 1;
-  }
-
-  return 0;
-}
+// I deleted this API KEY from my account so that is 100% safe to share it here:)
+const std::string API_KEY = "63275b3bcb9672d8b7ff96485255cf70";
 ```
-
-<p>This C++ code defines a ROS service server for a weather service that returns a dummy weather status and temperature for a given GPS location, and prints the results to the console</p>
 
 > weather_service_server.cpp
 
 ```cpp
-#include "ros/ros.h"
-#include "smart_city/WeatherService.h"
-#include "smart_city/GPSLocation.h"
-#include "smart_city/WeatherStatus.h"
+#include <ros/ros.h>
+#include <smart_city/WeatherService.h>
+#include <curl/curl.h>
+#include <jsoncpp/json/json.h>
 
-bool getWeather(smart_city::WeatherService::Request &req,
-                smart_city::WeatherService::Response &res)
+const std::string API_KEY = "63275b3bcb9672d8b7ff96485255cf70";
+
+size_t writeCallback(char* buf, size_t size, size_t nmemb, void* up)
 {
-  // For now, we will return a dummy weather status
-  res.weather.condition = "Sunny";
-  res.weather.temperature = 25.0;
-
-  ROS_INFO("Request: GPS location (latitude: %f, longitude: %f)", req.gps.latitude, req.gps.longitude);
-  ROS_INFO("Sending... Weather Status: %s, Temperature: %f", res.weather.condition.c_str(), res.weather.temperature);
-  return true;
+    for (int i = 0; i < size*nmemb; i++)
+    {
+        ((std::string*)up)->push_back(buf[i]);
+    }
+    return size*nmemb;
 }
 
-int main(int argc, char **argv)
+bool getWeatherInfo(float lat, float lon, std::string& city_name, std::string& weather, float& temp)
 {
-  ros::init(argc, argv, "weather_service_server");
-  ros::NodeHandle n;
+    std::string readBuffer;
+    CURL* curl = curl_easy_init();
 
-  ros::ServiceServer service = n.advertiseService("get_weather", getWeather);
-  ROS_INFO("Weather service server is ready.");
-  ros::spin();
+    if (curl)
+    {
+        std::string url;
+        if (!city_name.empty()) {
+            url = "http://api.openweathermap.org/data/2.5/weather?q=" + city_name + "&appid=" + API_KEY + "&units=metric";
+        } else {
+            url = "http://api.openweathermap.org/data/2.5/weather?lat=" + std::to_string(lat) + "&lon=" + std::to_string(lon) + "&appid=" + API_KEY + "&units=metric";
+        }
+        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeCallback);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+        CURLcode res = curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
 
-  return 0;
+        if (res != CURLE_OK)
+        {
+            ROS_ERROR("Error occurred while getting weather information");
+            return false;
+        }
+        else
+        {
+            Json::Value root;
+            Json::CharReaderBuilder builder;
+            Json::CharReader* reader = builder.newCharReader();
+            std::string errors;
+
+            if (!reader->parse(readBuffer.c_str(), readBuffer.c_str() + readBuffer.size(), &root, &errors))
+            {
+                ROS_ERROR_STREAM("Failed to parse JSON: " << errors);
+                return false;
+            }
+
+            city_name = root["name"].asString();
+            weather = root["weather"][0]["description"].asString();
+            temp = root["main"]["temp"].asFloat();
+
+            return true;
+        }
+    }
+    else
+    {
+        ROS_ERROR("Failed to initialize curl");
+        return false;
+    }
 }
-```
 
-<p>The <code>smart_city/GPSLocation</code> message type stores the latitude and longitude values of a location, while the <code>smart_city/WeatherStatus</code> message type stores the weather condition and temperature at a given GPS location. These message types are used in the "get_weather" service, which takes a GPS location as input and returns a <code>WeatherStatus</code> message containing the relevant data.</p>
-> WeatherService.srv
+bool weatherServiceHandler(smart_city::WeatherService::Request &req,
+                           smart_city::WeatherService::Response &res)
+{
+    std::string city;
+    std::string weather;
+    float temp;
 
-```srv
-smart_city/GPSLocation gps
----
-smart_city/WeatherStatus weather
+    if (getWeatherInfo(req.latitude, req.longitude, req.city_name, weather, temp))
+    {
+        res.city_name = req.city_name;
+        res.weather_status = weather;
+        res.temperature = temp;
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+
+int main(int argc, char** argv)
+{
+    ros::init(argc, argv, "weather_service_server");
+    ros::NodeHandle nh;
+    ros::ServiceServer service = nh.advertiseService("weather_service", weatherServiceHandler);
+    ROS_INFO("Ready to get weather information");
+    ros::spin();
+
+    return 0;
+}
+
 ```
 
 ## Functionality 2
