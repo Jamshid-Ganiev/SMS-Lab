@@ -1,7 +1,7 @@
 # SMS-Lab
 Smart Mobility Service Lab
 ### For grading purposes:
-<strong>I did not move any piece of code into .gitignore. <i>And It does not mean that I do not know how to use .gitignore concept!</i></strong>
+<strong>I did not move any piece of code into .gitignore. <i>As I prefer to keep all the code visible until all the HW Assignments are checked.</i></strong>
 <br/>
 > here is an easy way:
 > <br/>
