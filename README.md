@@ -288,9 +288,10 @@ trip_distance: 10.0
 # Week 8 | MID-TERM PROJECT <a name="week-8"></a>
 ***
 ## Functionality 1
-Verison one:
+Version One:
 ![image](https://user-images.githubusercontent.com/84252587/233704131-f154a7e7-a405-444f-a895-258d87b339c9.png)
 
+Version Two:
 ## ROS Weather Service Using OpenWeather API
 
 This project demonstrates a weather service application using ROS for the Mid-Term Project. The application consists of three nodes: `user_input`, `weather_service_client`, and `weather_service_server`. The project fetches weather data from the OpenWeatherMap API.
