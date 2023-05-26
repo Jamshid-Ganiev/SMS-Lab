@@ -1,7 +1,7 @@
 # SMS-Lab
 Smart Mobility Service Lab
 ### For grading purposes:
-<strong>I did not move any piece of code into .gitignore. <i>And It does not mean that I do not know how to use .gitignore concept!</i></strong>
+<strong>I did not move any piece of code into .gitignore. <i>As I prefer to keep all the code visible until all the HW Assignments are checked.</i></strong>
 <br/>
 > here is an easy way:
 > <br/>
@@ -288,9 +288,10 @@ trip_distance: 10.0
 # Week 8 | MID-TERM PROJECT <a name="week-8"></a>
 ***
 ## Functionality 1
-Verison one:
+Version One:
 ![image](https://user-images.githubusercontent.com/84252587/233704131-f154a7e7-a405-444f-a895-258d87b339c9.png)
 
+Version Two:
 ## ROS Weather Service Using OpenWeather API
 
 This project demonstrates a weather service application using ROS for the Mid-Term Project. The application consists of three nodes: `user_input`, `weather_service_client`, and `weather_service_server`. The project fetches weather data from the OpenWeatherMap API.
@@ -301,14 +302,19 @@ This project demonstrates a weather service application using ROS for the Mid-Te
 
 2. **weather_service_client**: This node subscribes to the `user_input/req` topic and listens for messages published by the `user_input` node.
 
-### When entering a city name: 
-![image](https://user-images.githubusercontent.com/84252587/234138936-88a570a9-b560-4575-9e67-d1b7a167f432.png)
+### When entering a city name:  // Retrieving real data
+![image](https://user-images.githubusercontent.com/84252587/234318257-e8c89b19-c104-4e6f-9723-972b633dd1b6.png)
+
 
 ### When entering GPS coordinates: 
 > this is the real coordinates of Incheon:
-![image](https://user-images.githubusercontent.com/84252587/234139585-e2c84147-5854-4f44-8f91-a7e92f6f4dc8.png)
+
+![Screenshot 2023-04-25 085204](https://user-images.githubusercontent.com/84252587/234319487-1e523282-719e-4a23-a81a-450adb976db2.png)
+
+
 > Successful demo photo from the project:
-![image](https://user-images.githubusercontent.com/84252587/234140147-5f203f01-d7a8-4339-a444-310db3347dbe.png)
+
+![image](https://user-images.githubusercontent.com/84252587/234318103-28e8ebda-3b0e-4f86-8419-cf589caebc60.png)
 
 ## Here is the most important thing:
 When you enter "Incheon" in the `user_input.cpp` terminal what happens?
