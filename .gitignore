@@ -5,12 +5,12 @@ catkin_ws/bin/
 catkin_ws/lib/
 catkin_ws/install/
 
-Mid_term-Project/devel/
-Mid_term-Project/logs/
-Mid_term-Project/build/
-Mid_term-Project/bin/
-Mid_term-Project/lib/
-Mid_term-Project/install/
+/Mid_term-Project/devel/
+/Mid_term-Project/logs/
+/Mid_term-Project/build/
+/Mid_term-Project/bin/
+/Mid_term-Project/lib/
+/Mid_term-Project/install/
 
 
 week-3/devel/
