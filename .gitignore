@@ -5,12 +5,12 @@ catkin_ws/bin/
 catkin_ws/lib/
 catkin_ws/install/
 
-/Mid_term-Project/devel/
-/Mid_term-Project/logs/
-/Mid_term-Project/build/
-/Mid_term-Project/bin/
-/Mid_term-Project/lib/
-/Mid_term-Project/install/
+Mid_term-Project/smart_city/devel/
+Mid_term-Project/smart_city/logs/
+Mid_term-Project/smart_city/build/
+Mid_term-Project/smart_city/bin/
+Mid_term-Project/smart_city/lib/
+Mid_term-Project/smart_city/install/
 
 
 week-3/devel/
@@ -21,32 +21,32 @@ week-3/lib/
 week-3/install/
 
 
-week4_Homework_1/devel/
-week4_Homework_1/logs/
-week4_Homework_1/build/
-week4_Homework_1/bin/
-week4_Homework_1/lib/
-week4_Homework_1/install/
+week4_Homework_1/catkin_ws/devel/
+week4_Homework_1/catkin_ws/logs/
+week4_Homework_1/catkin_ws/build/
+week4_Homework_1/catkin_ws/bin/
+week4_Homework_1/catkin_ws/lib/
+week4_Homework_1/catkin_ws/install/
 
 
-week5_Homework_2/devel/
-week5_Homework_2/logs/
-week5_Homework_2/build/
-week5_Homework_2/bin/
-week5_Homework_2/lib/
-week5_Homework_2/install/
+week5_Homework_2/catkin_ws/homework2_ws/devel/
+week5_Homework_2/catkin_ws/homework2_ws/logs/
+week5_Homework_2/catkin_ws/homework2_ws/build/
+week5_Homework_2/catkin_ws/homework2_ws/bin/
+week5_Homework_2/catkin_ws/homework2_ws/lib/
+week5_Homework_2/catkin_ws/homework2_ws/install/
 
-week6_Homework_3/devel/
-week6_Homework_3/logs/
-week6_Homework_3/build/
-week6_Homework_3/bin/
-week6_Homework_3/lib/
-week6_Homework_3/install/
+week6_Homework_3/catkin_ws/devel/
+week6_Homework_3/catkin_ws/logs/
+week6_Homework_3/catkin_ws/build/
+week6_Homework_3/catkin_ws/bin/
+week6_Homework_3/catkin_ws/lib/
+week6_Homework_3/catkin_ws/install/
 
 
-week7_Homework_4/devel/
-week7_Homework_4/logs/
-week7_Homework_4/build/
-week7_Homework_4/bin/
-week7_Homework_4/lib/
-week7_Homework_4/install/
+week7_Homework_4/catkin_ws/homework4_ws/devel/
+week7_Homework_4/catkin_ws/homework4_ws/logs/
+week7_Homework_4/catkin_ws/homework4_ws/build/
+week7_Homework_4/catkin_ws/homework4_ws/bin/
+week7_Homework_4/catkin_ws/homework4_ws/lib/
+week7_Homework_4/catkin_ws/homework4_ws/install/
